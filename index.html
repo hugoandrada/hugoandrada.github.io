@@ -817,4 +817,17 @@
       document.getElementById('sec-es').classList.toggle('active', lang === 'es');
       var s = strings[lang];
       document.getElementById('main-title').innerHTML = s.title;
-      document.getElementById('main-sub').textContent
+      document.getElementById('main-sub').textContent = s.sub;
+      document.getElementById('footer-date').textContent = s.footerDate;
+      document.getElementById('z1-title').textContent = s.z1t;
+      document.getElementById('z1-desc').textContent = s.z1d;
+      document.getElementById('z2-title').textContent = s.z2t;
+      document.getElementById('z2-desc').textContent = s.z2d;
+      document.getElementById('z3-title').textContent = s.z3t;
+      document.getElementById('z3-desc').textContent = s.z3d;
+      document.documentElement.lang = lang;
+    }
+  </script>
+
+</body>
+</html>
