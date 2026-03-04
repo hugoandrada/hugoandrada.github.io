@@ -1,833 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Hugo Andrada</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal — Hugo Andrada</title>
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --bg:        #080a0d;
-      --bg2:       #0d1017;
-      --surface:   #111318;
-      --surface2:  #161920;
-      --border:    rgba(255,255,255,0.07);
-      --border2:   rgba(255,255,255,0.12);
-      --neon:      #00ff88;
-      --neon-dim:  #00cc6a;
-      --neon-glow: rgba(0,255,136,0.15);
-      --neon-glow2:rgba(0,255,136,0.06);
-      --text:      #e8edf2;
-      --text-mid:  #8892a0;
-      --text-dim:  #4a5260;
-      --red:       #ff4d6a;
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Syne', sans-serif;
+      --bg:       #0a0a0f;
+      --surface:  #111118;
+      --border:   #1e1e2e;
+      --primary:  #9d7bff;
+      --accent:   #ffd700;
+      --text:     #e8e4f3;
+      --muted:    #7b7399;
+      --mono:     'Courier New', monospace;
+      --sans:     -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: var(--mono);
-      font-weight: 300;
-      min-height: 100vh;
-      overflow-x: hidden;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
     }
 
-    /* ── SCANLINE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.03) 2px,
-        rgba(0,0,0,0.03) 4px
-      );
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    /* ── LANG BAR ── */
-    .lang-bar {
+    /* ── TOP NAV ── */
+    nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(8,10,13,0.92);
+      background: rgba(10,10,15,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2rem;
-      height: 48px;
+      padding: 0 32px;
+      height: 54px;
+      gap: 16px;
     }
 
-    .lang-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
-    }
-
-    .lang-bar-left .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--neon);
-      box-shadow: 0 0 8px var(--neon);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    .lang-btns { display: flex; gap: 0; }
-
-    .lang-btn {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      padding: 0.35rem 1rem;
+    .nav-brand {
       font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .nav-brand span { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: var(--surface);
+    }
+    .nav-links a.active {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: rgba(157,123,255,0.08);
+    }
+
+    .nav-lang {
+      display: flex;
+      gap: 4px;
+    }
+    .nav-lang button {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 5px;
       cursor: pointer;
       transition: all 0.2s;
     }
-
-    .lang-btn:first-child { border-radius: 3px 0 0 3px; }
-    .lang-btn:last-child  { border-radius: 0 3px 3px 0; border-left: none; }
-
-    .lang-btn.active {
-      background: var(--neon-glow);
-      border-color: var(--neon-dim);
-      color: var(--neon);
+    .nav-lang button.active,
+    .nav-lang button:hover {
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
-    .lang-btn:hover:not(.active) { color: var(--text); border-color: var(--border2); }
-
-    /* ── HEADER ── */
-    header {
-      position: relative;
-      padding: 5rem 2rem 4rem;
+    /* ── HERO BADGES ── */
+    .hero {
       text-align: center;
-      overflow: hidden;
+      padding: 64px 24px 40px;
+      border-bottom: 1px solid var(--border);
     }
 
-    header::before {
-      content: '';
-      position: absolute;
-      top: -100px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 400px;
-      background: radial-gradient(ellipse, rgba(0,255,136,0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--primary);
     }
 
-    .header-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--neon-dim);
-      margin-bottom: 1.5rem;
+    .hero-sub {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 32px;
     }
 
-    .header-eyebrow span {
-      color: var(--text-dim);
+    .badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
     }
 
-    .header-eyebrow::before,
-    .header-eyebrow::after {
-      content: '';
-      display: block;
-      width: 24px; height: 1px;
-      background: var(--neon-dim);
-      opacity: 0.5;
-    }
-
-    header h1 {
-      font-family: var(--sans);
-      font-weight: 800;
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    header h1 em {
-      font-style: normal;
-      color: var(--neon);
-    }
-
-    .header-meta {
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── TERMINAL GRID ── */
-    .terminal-grid {
-      max-width: 860px;
-      margin: 0 auto 3rem;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .terminal-card {
+    .badge {
       background: var(--surface);
-      padding: 1.8rem 1.6rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.2s;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 140px;
     }
-
-    .terminal-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--neon-dim), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
+    .badge .icon { font-size: 24px; }
+    .badge .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-
-    .terminal-card:hover { background: var(--surface2); }
-    .terminal-card:hover::before { opacity: 1; }
-
-    .tc-index {
-      font-size: 0.6rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-    }
-
-    .tc-icon {
-      font-size: 1.6rem;
-      margin-bottom: 0.8rem;
-      display: block;
-    }
-
-    .tc-title {
-      font-family: var(--sans);
-      font-size: 0.9rem;
+    .badge .value {
+      font-size: 13px;
       font-weight: 600;
-      color: var(--neon);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.02em;
+      color: var(--text);
     }
-
-    .tc-desc {
-      font-size: 0.75rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    /* ── CONTENT ── */
-    .content {
-      max-width: 860px;
-      margin: 0 auto 5rem;
-      padding: 0 2rem;
-    }
-
-    .lang-section { display: none; }
-    .lang-section.active { display: block; }
 
     .meta-row {
       display: flex;
-      gap: 0;
-      margin-bottom: 2.5rem;
-      border: 1px solid var(--border);
-      overflow: hidden;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .meta-row span { color: var(--text); font-weight: 600; }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
     }
 
-    .meta-chip {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.68rem;
-      color: var(--text-dim);
-      letter-spacing: 0.1em;
-      border-right: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .meta-chip:last-child { border-right: none; }
-    .meta-chip b { color: var(--text-mid); font-weight: 400; }
-
-    /* ── POLICY SECTION ── */
-    .policy-section {
-      border: 1px solid var(--border);
-      margin-bottom: 2px;
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-
-    .policy-section:hover { border-color: var(--border2); }
-
-    .policy-section-header {
-      padding: 1.2rem 1.6rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--surface);
+    .section-header {
+      padding: 56px 0 32px;
       border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
     }
 
-    .section-num {
-      font-size: 0.62rem;
-      color: var(--neon-dim);
-      letter-spacing: 0.15em;
-      font-weight: 500;
-      min-width: 32px;
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
 
-    .section-title-text {
-      font-family: var(--sans);
-      font-size: 0.95rem;
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .section-header h2 em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .section-header p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── ITEMS ── */
+    .item {
+      margin-bottom: 40px;
+    }
+
+    .item-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .item-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--primary);
+      min-width: 24px;
+    }
+
+    .item-title {
+      font-size: 16px;
       font-weight: 600;
       color: var(--text);
-      letter-spacing: 0.01em;
+      flex: 1;
     }
 
-    .section-arrow {
-      margin-left: auto;
-      color: var(--text-dim);
-      font-size: 0.7rem;
-    }
-
-    .policy-body {
-      padding: 1.6rem;
-      background: var(--bg2);
-    }
-
-    .policy-body p {
-      font-size: 0.83rem;
-      line-height: 1.9;
-      color: var(--text-mid);
-      margin-bottom: 1rem;
-    }
-
-    .policy-body p:last-child { margin-bottom: 0; }
-    .policy-body a { color: var(--neon-dim); text-decoration: none; border-bottom: 1px solid rgba(0,204,106,0.3); }
-    .policy-body a:hover { color: var(--neon); border-color: var(--neon); }
-
-    /* ── HIGHLIGHT ── */
-    .highlight {
-      background: var(--neon-glow2);
-      border: 1px solid rgba(0,255,136,0.12);
-      border-left: 2px solid var(--neon-dim);
-      padding: 1rem 1.2rem;
-      margin: 1rem 0;
-      font-size: 0.8rem;
-      line-height: 1.8;
-      color: var(--text-mid);
-    }
-
-    .highlight strong {
-      display: block;
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--neon-dim);
-      font-weight: 500;
-      margin-bottom: 0.5rem;
+    .item-arrow {
       font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
     }
 
-    /* ── LISTS ── */
-    .check-list, .cross-list {
-      list-style: none;
-      margin: 0.8rem 0;
-    }
-
-    .check-list li, .cross-list li {
-      font-size: 0.82rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      padding: 0.55rem 0 0.55rem 1.6rem;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .check-list li:last-child, .cross-list li:last-child { border-bottom: none; }
-
-    .check-list li::before {
-      content: '✓';
-      position: absolute; left: 0;
-      color: var(--neon-dim);
-      font-weight: 500;
-    }
-
-    .cross-list li::before {
-      content: '✗';
-      position: absolute; left: 0;
-      color: var(--red);
-      font-weight: 500;
-    }
-
-    /* ── CONTACT ── */
-    .contact-card {
-      margin-top: 2rem;
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .contact-card::before {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 300px; height: 120px;
-      background: radial-gradient(ellipse, rgba(0,255,136,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .contact-card p {
-      color: var(--text-mid);
-      font-size: 0.82rem;
+    .item-body {
+      padding-left: 36px;
+      color: var(--muted);
+      font-size: 14px;
       line-height: 1.8;
-      margin-bottom: 1.2rem;
     }
 
-    .contact-card a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--neon);
-      text-decoration: none;
-      font-size: 0.85rem;
-      border: 1px solid rgba(0,255,136,0.2);
-      padding: 0.6rem 1.4rem;
-      border-radius: 2px;
-      transition: all 0.2s;
+    .item-body p { margin-bottom: 12px; }
+
+    .item-body ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .item-body ul li { margin-bottom: 4px; }
+
+    .item-body strong { color: var(--text); }
+
+    .inline-code {
+      font-family: var(--mono);
+      font-size: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: var(--primary);
     }
 
-    .contact-card a:hover {
-      background: var(--neon-glow);
-      border-color: var(--neon-dim);
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .highlight-box strong { color: var(--text); }
+
+    .disclaimer-box {
+      background: rgba(255, 215, 0, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .disclaimer-box strong { color: var(--accent); }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
     }
 
     /* ── FOOTER ── */
     footer {
+      text-align: center;
+      padding: 40px 24px;
       border-top: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      max-width: 860px;
-      margin: 0 auto;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
     }
-
-    footer p, footer a {
-      font-size: 0.68rem;
-      color: var(--text-dim);
+    footer a {
+      color: var(--primary);
       text-decoration: none;
-      letter-spacing: 0.06em;
     }
+    footer a:hover { text-decoration: underline; }
 
-    footer a:hover { color: var(--neon-dim); }
+    /* ── LANG TOGGLE ── */
+    [data-lang="es"] { display: none; }
+    body.lang-es [data-lang="en"] { display: none; }
+    body.lang-es [data-lang="es"] { display: block; }
+    body.lang-es .item-body[data-lang="es"] { display: block; }
 
-    .footer-sig {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text-mid);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    header, .terminal-grid, .content { animation: fadeUp 0.6s ease both; }
-    .terminal-grid { animation-delay: 0.1s; }
-    .content { animation-delay: 0.2s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      header { padding: 3.5rem 1.5rem 3rem; }
-      .terminal-grid { grid-template-columns: 1fr; }
-      .content, .terminal-grid { padding: 0 1rem; }
-      .meta-row { flex-direction: column; }
-      .meta-chip { border-right: none; border-bottom: 1px solid var(--border); }
-      .meta-chip:last-child { border-bottom: none; }
-      footer { flex-direction: column; text-align: center; padding: 1.5rem; }
-      .lang-bar { padding: 0 1rem; }
+    @media (max-width: 600px) {
+      nav { padding: 0 16px; }
+      .nav-brand { display: none; }
+      .badges { gap: 10px; }
+      .badge { min-width: 110px; padding: 12px 16px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- LANG BAR -->
-  <div class="lang-bar">
-    <div class="lang-bar-left">
-      <div class="dot"></div>
-      <span>privacy_policy.html</span>
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav>
+  <div class="nav-brand"><span>hugo</span>andrada.github.io</div>
+  <div class="nav-links">
+    <a href="#privacy" class="active" onclick="setActive(this)">Privacy Policy</a>
+    <a href="#eula" onclick="setActive(this)">Terms of Use</a>
+  </div>
+  <div class="nav-lang">
+    <button class="active" onclick="setLang('en', this)">EN</button>
+    <button onclick="setLang('es', this)">ES</button>
+  </div>
+</nav>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<div class="hero">
+  <div class="hero-sub">App Store · Hugo Andrada · iOS</div>
+  <h1>Legal <em>Documents</em></h1>
+  <p style="color:var(--muted);font-size:14px;margin-top:8px;margin-bottom:32px;">
+    Privacy Policy &amp; Terms of Use for all Hugo Andrada iOS apps
+  </p>
+  <div class="badges">
+    <div class="badge">
+      <div class="icon">🚫</div>
+      <div class="label">No collection</div>
+      <div class="value">Zero data</div>
     </div>
-    <div class="lang-btns">
-      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
-      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <div class="badge">
+      <div class="icon">🔒</div>
+      <div class="label">Local only</div>
+      <div class="value">On-device</div>
+    </div>
+    <div class="badge">
+      <div class="icon">📡</div>
+      <div class="label">No servers</div>
+      <div class="value">No backend</div>
+    </div>
+    <div class="badge">
+      <div class="icon">🎴</div>
+      <div class="label">Entertainment</div>
+      <div class="value">Not advice</div>
+    </div>
+  </div>
+  <div class="meta-row">
+    <div>dev: <span>Hugo Andrada</span></div>
+    <div>v: <span>2.0</span></div>
+    <div>platform: <span>iOS / App Store</span></div>
+    <div>updated: <span>March 2026</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════ PRIVACY POLICY ══════════════════ -->
+<div id="privacy" class="section">
+
+  <div class="section-header">
+    <div class="section-tag">// document 01</div>
+    <h2>Privacy <em>Policy</em></h2>
+    <p data-lang="en">Last updated: March 4, 2026</p>
+    <p data-lang="es">Última actualización: 4 de marzo de 2026</p>
+  </div>
+
+  <!-- 01 Introduction -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">01</div>
+      <div class="item-title" data-lang="en">Introduction</div>
+      <div class="item-title" data-lang="es">Introducción</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>This Privacy Policy describes how Hugo Andrada ("I", "the developer") handles information from users of mobile applications published on Apple's App Store.</p>
+      <div class="highlight-box"><strong>// one-line summary</strong><br>I do not collect, store, process, or share any of your data. Period.</div>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Esta Política de Privacidad describe cómo Hugo Andrada ("yo", "el desarrollador") gestiona la información de los usuarios de las aplicaciones móviles publicadas en la App Store de Apple.</p>
+      <div class="highlight-box"><strong>// resumen en una línea</strong><br>No recopilo, no almaceno, no proceso ni comparto ningún dato tuyo. Punto.</div>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-eyebrow">
-      <span>App Store</span> Hugo Andrada <span>iOS</span>
+  <!-- 02 Information not collected -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">02</div>
+      <div class="item-title" data-lang="en">Information I do NOT collect</div>
+      <div class="item-title" data-lang="es">Información que NO recopilo</div>
+      <div class="item-arrow">▸</div>
     </div>
-    <h1 id="main-title">Privacy<br><em>Policy</em></h1>
-    <p class="header-meta" id="main-sub">Last updated: February 18, 2025</p>
-  </header>
-
-  <!-- TERMINAL GRID -->
-  <div class="terminal-grid">
-    <div class="terminal-card">
-      <div class="tc-index">// 01</div>
-      <span class="tc-icon">🚫</span>
-      <div class="tc-title" id="z1-title">No collection</div>
-      <div class="tc-desc" id="z1-desc">We collect no personal or usage data whatsoever.</div>
+    <div class="item-body" data-lang="en">
+      <p>My applications are built on a total-privacy philosophy. I do not collect any type of information, including:</p>
+      <ul>
+        <li>Name, email address, phone number, or any other personal identity information</li>
+        <li>Geographic location or GPS data</li>
+        <li>Usage history, sessions, or in-app behavior</li>
+        <li>Device identifiers (IDFA, IDFV, etc.)</li>
+        <li>Health, financial, or any other sensitive category of data</li>
+        <li>Cookies, trackers, or any tracking technologies</li>
+        <li>IP addresses or network data</li>
+        <li>Contacts, photos, microphone, or other device resources</li>
+      </ul>
     </div>
-    <div class="terminal-card">
-      <div class="tc-index">// 02</div>
-      <span class="tc-icon">🔒</span>
-      <div class="tc-title" id="z2-title">Local only</div>
-      <div class="tc-desc" id="z2-desc">Everything runs on your device. Nothing leaves it.</div>
-    </div>
-    <div class="terminal-card">
-      <div class="tc-index">// 03</div>
-      <span class="tc-icon">📡</span>
-      <div class="tc-title" id="z3-title">No servers</div>
-      <div class="tc-desc" id="z3-desc">We send no information to any external server.</div>
-    </div>
-  </div>
-
-  <!-- CONTENT -->
-  <div class="content">
-
-    <div class="meta-row">
-      <div class="meta-chip" id="meta-dev">dev: <b>Hugo Andrada</b></div>
-      <div class="meta-chip" id="meta-ver">v: <b>1.0</b></div>
-      <div class="meta-chip" id="meta-plat">platform: <b>iOS / App Store</b></div>
-    </div>
-
-    <!-- ENGLISH -->
-    <div class="lang-section active" id="sec-en">
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">01</div>
-          <div class="section-title-text">Introduction</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>This Privacy Policy describes how Hugo Andrada ("I", "the developer") handles information from users of mobile applications published on Apple's App Store.</p>
-          <div class="highlight"><strong>// one-line summary</strong>I do not collect, store, process, or share any of your data. Period.</div>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">02</div>
-          <div class="section-title-text">Information I do NOT collect</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>My applications are built on a total-privacy philosophy. I do not collect any type of information, including:</p>
-          <ul class="cross-list">
-            <li>Name, email address, phone number, or any other personal identity information</li>
-            <li>Geographic location or GPS data</li>
-            <li>Usage history, sessions, or in-app behavior</li>
-            <li>Device identifiers (IDFA, IDFV, etc.)</li>
-            <li>Health, financial, or any other sensitive category of data</li>
-            <li>Cookies, trackers, or any tracking technologies</li>
-            <li>IP addresses or network data</li>
-            <li>Contacts, photos, microphone, or other device resources</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">03</div>
-          <div class="section-title-text">Local storage only</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>All data you enter into the application — settings, preferences, records — is stored <strong style="color:var(--text)">exclusively on your own device</strong>, using native iOS capabilities such as UserDefaults or SwiftData.</p>
-          <ul class="check-list">
-            <li>Data lives only on your iPhone or iPad</li>
-            <li>No one else, including the developer, can access it</li>
-            <li>If you uninstall the app, all data is permanently deleted</li>
-            <li>If you back up using iCloud or iTunes, that is governed by Apple's own terms</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">04</div>
-          <div class="section-title-text">No external server connections</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>My applications do not communicate with any external servers owned by the developer. There is no backend infrastructure receiving your information. The app operates entirely and autonomously on your device.</p>
-          <div class="highlight"><strong>// note on third-party services</strong>If the app includes tools such as RevenueCat (subscription management) or Apple's in-app purchase framework, those services may handle transaction data according to their own privacy policies. The developer does not access that information in any way.</div>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">05</div>
-          <div class="section-title-text">Purchases and subscriptions</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>If the application offers in-app purchases or subscriptions, these are processed directly by Apple through the App Store. The developer does not receive or store payment data, credit card information, or any financial data of any kind.</p>
-          <p>For details on how Apple handles payment data, please visit: <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></p>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">06</div>
-          <div class="section-title-text">Children's privacy</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Since we do not collect any data, there is no risk of processing information from minors. Our applications do not collect information from people of any age, including children under 13 (COPPA) or under 16 (GDPR).</p>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">07</div>
-          <div class="section-title-text">Your rights</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Since we do not collect or store any data, there is nothing to request, export, or delete from our servers. You have full control of your information from the very first moment.</p>
-          <ul class="check-list">
-            <li>You can delete all your data by uninstalling the application</li>
-            <li>You do not need to request data deletion from us because we hold none</li>
-            <li>You will not receive marketing communications because we do not have your email or phone number</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">08</div>
-          <div class="section-title-text">Changes to this policy</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>If significant changes are made to this privacy policy in the future — for example, if a feature requiring data processing is added — users will be notified through an application update on the App Store, where changes will be clearly described in the version release notes.</p>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <p>Have questions about this privacy policy?<br>I'm available to answer any concerns.</p>
-        <a href="/cdn-cgi/l/email-protection#214954464e404f4553404540161661464c40484d0f424e4c">✉ <span class="__cf_email__" data-cfemail="b5ddc0d2dad4dbd1c7d4d1d48282f5d2d8d4dcd99bd6dad8">[email&#160;protected]</span></a>
-      </div>
-
-    </div>
-
-    <!-- ESPAÑOL -->
-    <div class="lang-section" id="sec-es">
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">01</div>
-          <div class="section-title-text">Introducción</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Esta Política de Privacidad describe cómo Hugo Andrada ("yo", "el desarrollador") gestiona la información de los usuarios que utilizan las aplicaciones móviles publicadas en la App Store de Apple.</p>
-          <div class="highlight"><strong>// resumen en una línea</strong>No recopilo, no almaceno, no proceso ni comparto ningún dato tuyo. Punto.</div>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">02</div>
-          <div class="section-title-text">Información que NO recopilo</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Mis aplicaciones están diseñadas con una filosofía de privacidad total. No recopilo ningún tipo de información, incluyendo:</p>
-          <ul class="cross-list">
-            <li>Nombre, correo electrónico, número de teléfono u otra información de identidad personal</li>
-            <li>Ubicación geográfica o datos GPS</li>
-            <li>Historial de uso, sesiones o comportamiento dentro de la app</li>
-            <li>Identificadores del dispositivo (IDFA, IDFV, etc.)</li>
-            <li>Datos de salud, financieros o cualquier categoría sensible</li>
-            <li>Cookies, rastreadores o tecnologías de seguimiento de ningún tipo</li>
-            <li>Direcciones IP o datos de red</li>
-            <li>Contactos, fotos, micrófono u otros recursos del dispositivo</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">03</div>
-          <div class="section-title-text">Almacenamiento local únicamente</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Todos los datos que introduzcas en la aplicación —configuraciones, preferencias, registros— se almacenan <strong style="color:var(--text)">exclusivamente en tu propio dispositivo</strong>, utilizando las capacidades nativas de iOS como UserDefaults o SwiftData.</p>
-          <ul class="check-list">
-            <li>Los datos viven únicamente en tu iPhone o iPad</li>
-            <li>Nadie más, incluido el desarrollador, puede acceder a ellos</li>
-            <li>Si desinstalar la app, todos los datos se eliminan permanentemente</li>
-            <li>Si usas iCloud o iTunes para copias de seguridad, eso queda bajo las condiciones de Apple</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">04</div>
-          <div class="section-title-text">Sin conexión a servidores externos</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Mis aplicaciones no se comunican con ningún servidor externo propio. No existe infraestructura backend que reciba tu información. La app funciona de manera completamente autónoma en tu dispositivo.</p>
-          <div class="highlight"><strong>// nota sobre servicios de terceros</strong>Si la app incorpora herramientas como RevenueCat (gestión de suscripciones) o el sistema de compras de Apple, dichos servicios gestionan los datos de transacción según sus propias políticas. El desarrollador no accede a esa información en ningún caso.</div>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">05</div>
-          <div class="section-title-text">Compras y suscripciones</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Si la aplicación ofrece compras integradas o suscripciones, estas son procesadas directamente por Apple a través de la App Store. El desarrollador no recibe ni almacena datos de pago, tarjetas de crédito ni información financiera de ningún tipo.</p>
-          <p>Para consultar cómo Apple gestiona los datos de pago, visita: <a href="https://www.apple.com/legal/privacy/es/" target="_blank">apple.com/legal/privacy</a></p>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">06</div>
-          <div class="section-title-text">Menores de edad</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Dado que no recopilamos ningún dato, no existe riesgo de tratamiento de información de menores. Nuestras aplicaciones no recopilan información de personas de ninguna edad, incluidos menores de 13 años (COPPA) o de 16 años (GDPR).</p>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">07</div>
-          <div class="section-title-text">Tus derechos</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Como no recopilamos ni almacenamos ningún dato, no hay información que solicitar, exportar o eliminar de nuestros servidores. El control total de tu información es tuyo desde el primer momento.</p>
-          <ul class="check-list">
-            <li>Puedes eliminar todos tus datos desinstalando la aplicación</li>
-            <li>No necesitas solicitarnos la eliminación de datos porque no tenemos ninguno</li>
-            <li>No recibirás comunicaciones comerciales porque no tenemos tu correo ni teléfono</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="policy-section">
-        <div class="policy-section-header">
-          <div class="section-num">08</div>
-          <div class="section-title-text">Cambios en esta política</div>
-          <div class="section-arrow">▸</div>
-        </div>
-        <div class="policy-body">
-          <p>Si en el futuro se realizan cambios significativos en esta política, se notificará mediante una actualización de la aplicación en la App Store, donde los cambios serán descritos claramente en las notas de la versión.</p>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <p>¿Tienes preguntas sobre esta política de privacidad?<br>Estoy disponible para responder cualquier duda.</p>
-        <a href="/cdn-cgi/l/email-protection#f09885979f919e9482919491c7c7b0979d91999cde939f9d">✉ <span class="__cf_email__" data-cfemail="a8c0ddcfc7c9c6ccdac9ccc99f9fe8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></a>
-      </div>
-
+    <div class="item-body" data-lang="es">
+      <p>Mis aplicaciones están diseñadas con una filosofía de privacidad total. No recopilo ningún tipo de información, incluyendo:</p>
+      <ul>
+        <li>Nombre, correo electrónico, número de teléfono u otra información de identidad personal</li>
+        <li>Ubicación geográfica o datos GPS</li>
+        <li>Historial de uso, sesiones o comportamiento dentro de la app</li>
+        <li>Identificadores del dispositivo (IDFA, IDFV, etc.)</li>
+        <li>Datos de salud, financieros o cualquier categoría sensible</li>
+        <li>Cookies, rastreadores o tecnologías de seguimiento</li>
+        <li>Direcciones IP o datos de red</li>
+        <li>Contactos, fotos, micrófono u otros recursos del dispositivo</li>
+      </ul>
     </div>
   </div>
 
-  <footer>
-    <span class="footer-sig">Hugo Andrada</span>
-    <p>© 2025 · iOS Developer</p>
-    <p><a href="/cdn-cgi/l/email-protection#85edf0e2eae4ebe1f7e4e1e4b2b2c5e2e8e4ece9abe6eae8"><span class="__cf_email__" data-cfemail="ddb5a8bab2bcb3b9afbcb9bceaea9dbab0bcb4b1f3beb2b0">[email&#160;protected]</span></a></p>
-    <p id="footer-date">Last updated: Feb 18, 2025</p>
-  </footer>
+  <!-- 03 Local storage -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">03</div>
+      <div class="item-title" data-lang="en">Local storage only</div>
+      <div class="item-title" data-lang="es">Almacenamiento local únicamente</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>All data you enter into the application — settings, preferences, your name, birth date, and records — is stored <strong>exclusively on your own device</strong>, using native iOS capabilities such as <span class="inline-code">UserDefaults</span> or <span class="inline-code">SwiftData</span>.</p>
+      <ul>
+        <li>Data lives only on your iPhone or iPad</li>
+        <li>No one else, including the developer, can access it</li>
+        <li>If you uninstall the app, all data is permanently deleted</li>
+        <li>If you back up using iCloud or iTunes, that is governed by Apple's own terms</li>
+      </ul>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Todos los datos que introduzcas en la aplicación —configuraciones, preferencias, tu nombre, fecha de nacimiento y registros— se almacenan <strong>exclusivamente en tu propio dispositivo</strong>, utilizando las capacidades nativas de iOS como <span class="inline-code">UserDefaults</span> o <span class="inline-code">SwiftData</span>.</p>
+      <ul>
+        <li>Los datos viven únicamente en tu iPhone o iPad</li>
+        <li>Nadie más, incluido el desarrollador, puede acceder a ellos</li>
+        <li>Si desinstalar la app, todos los datos se eliminan permanentemente</li>
+        <li>Si usas iCloud o iTunes para copias de seguridad, eso queda bajo las condiciones de Apple</li>
+      </ul>
+    </div>
+  </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    var strings = {
-      en: {
-        title: 'Privacy<br><em>Policy</em>',
-        sub: 'Last updated: February 18, 2025',
-        footerDate: 'Last updated: Feb 18, 2025',
-        z1t: 'No collection',    z1d: 'We collect no personal or usage data whatsoever.',
-        z2t: 'Local only',       z2d: 'Everything runs on your device. Nothing leaves it.',
-        z3t: 'No servers',       z3d: 'We send no information to any external server.',
-      },
-      es: {
-        title: 'Política de<br><em>Privacidad</em>',
-        sub: 'Última actualización: 18 de febrero de 2025',
-        footerDate: 'Última actualización: 18 feb 2025',
-        z1t: 'Sin recopilación', z1d: 'No recopilamos ningún dato personal ni de uso.',
-        z2t: 'Solo local',       z2d: 'Todo funciona en tu dispositivo. Nada sale de él.',
-        z3t: 'Sin servidores',   z3d: 'No enviamos información a ningún servidor externo.',
+  <!-- 04 No servers -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">04</div>
+      <div class="item-title" data-lang="en">No external server connections</div>
+      <div class="item-title" data-lang="es">Sin conexión a servidores externos</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>My applications do not communicate with any external servers owned by the developer. There is no backend infrastructure receiving your information. The app operates entirely and autonomously on your device.</p>
+      <div class="highlight-box"><strong>// note on third-party services</strong><br>If the app includes tools such as RevenueCat (subscription management) or Apple's in-app purchase framework, those services may handle transaction data according to their own privacy policies. The developer does not access that information in any way.</div>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Mis aplicaciones no se comunican con ningún servidor externo propio. No existe infraestructura backend que reciba tu información. La app funciona de manera completamente autónoma en tu dispositivo.</p>
+      <div class="highlight-box"><strong>// nota sobre servicios de terceros</strong><br>Si la app incorpora herramientas como RevenueCat (gestión de suscripciones) o el sistema de compras de Apple, dichos servicios gestionan los datos de transacción según sus propias políticas. El desarrollador no accede a esa información en ningún caso.</div>
+    </div>
+  </div>
+
+  <!-- 05 Purchases -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">05</div>
+      <div class="item-title" data-lang="en">Purchases and subscriptions</div>
+      <div class="item-title" data-lang="es">Compras y suscripciones</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>If the application offers in-app purchases or subscriptions, these are processed directly by Apple through the App Store. The developer does not receive or store payment data, credit card information, or any financial data of any kind.</p>
+      <p>For details on how Apple handles payment data, please visit: <a href="https://www.apple.com/legal/privacy/" style="color:var(--primary)">apple.com/legal/privacy</a></p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Si la aplicación ofrece compras integradas o suscripciones, estas son procesadas directamente por Apple a través de la App Store. El desarrollador no recibe ni almacena datos de pago, tarjetas de crédito ni información financiera de ningún tipo.</p>
+      <p>Para consultar cómo Apple gestiona los datos de pago, visita: <a href="https://www.apple.com/legal/privacy/es/" style="color:var(--primary)">apple.com/legal/privacy</a></p>
+    </div>
+  </div>
+
+  <!-- 06 Children -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">06</div>
+      <div class="item-title" data-lang="en">Children's privacy</div>
+      <div class="item-title" data-lang="es">Menores de edad</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>Since we do not collect any data, there is no risk of processing information from minors. Our applications do not collect information from people of any age, including children under 13 (COPPA) or under 16 (GDPR).</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Dado que no recopilamos ningún dato, no existe riesgo de tratamiento de información de menores. Nuestras aplicaciones no recopilan información de personas de ninguna edad, incluidos menores de 13 años (COPPA) o de 16 años (GDPR).</p>
+    </div>
+  </div>
+
+  <!-- 07 Rights -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">07</div>
+      <div class="item-title" data-lang="en">Your rights</div>
+      <div class="item-title" data-lang="es">Tus derechos</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>Since we do not collect or store any data, there is nothing to request, export, or delete from our servers. You have full control of your information from the very first moment.</p>
+      <ul>
+        <li>You can delete all your data by uninstalling the application</li>
+        <li>You do not need to request data deletion from us because we hold none</li>
+        <li>You will not receive marketing communications because we do not have your email or phone number</li>
+      </ul>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Como no recopilamos ni almacenamos ningún dato, no hay información que solicitar, exportar o eliminar de nuestros servidores. El control total de tu información es tuyo desde el primer momento.</p>
+      <ul>
+        <li>Puedes eliminar todos tus datos desinstalando la aplicación</li>
+        <li>No necesitas solicitarnos la eliminación de datos porque no tenemos ninguno</li>
+        <li>No recibirás comunicaciones comerciales porque no tenemos tu correo ni teléfono</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 08 Changes -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">08</div>
+      <div class="item-title" data-lang="en">Changes to this policy</div>
+      <div class="item-title" data-lang="es">Cambios en esta política</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>If significant changes are made to this privacy policy in the future — for example, if a feature requiring data processing is added — users will be notified through an application update on the App Store, where changes will be clearly described in the version release notes.</p>
+      <p>Have questions? <a href="mailto:contact@hugoandrada.dev" style="color:var(--primary)">✉ contact@hugoandrada.dev</a></p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Si en el futuro se realizan cambios significativos en esta política, se notificará mediante una actualización de la aplicación en la App Store, donde los cambios serán descritos claramente en las notas de la versión.</p>
+      <p>¿Preguntas? <a href="mailto:contact@hugoandrada.dev" style="color:var(--primary)">✉ contact@hugoandrada.dev</a></p>
+    </div>
+  </div>
+
+</div>
+
+<hr class="section-divider">
+
+<!-- ══════════════════ EULA ══════════════════ -->
+<div id="eula" class="section">
+
+  <div class="section-header">
+    <div class="section-tag">// document 02</div>
+    <h2>Terms of <em>Use</em></h2>
+    <p data-lang="en">End User License Agreement (EULA) · Last updated: March 4, 2026</p>
+    <p data-lang="es">Acuerdo de Licencia de Usuario Final (EULA) · Última actualización: 4 de marzo de 2026</p>
+  </div>
+
+  <!-- 01 License -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">01</div>
+      <div class="item-title" data-lang="en">License grant</div>
+      <div class="item-title" data-lang="es">Licencia de uso</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>Hugo Andrada grants you a personal, non-exclusive, non-transferable, limited license to download and use this application on any Apple device you own or control, subject to the terms of this agreement and Apple's App Store Terms of Service.</p>
+      <p>You may not rent, lease, lend, sell, redistribute, or sublicense the application.</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Hugo Andrada te otorga una licencia personal, no exclusiva, intransferible y limitada para descargar y usar esta aplicación en cualquier dispositivo Apple que poseas o controles, sujeta a los términos de este acuerdo y a los Términos de Servicio de la App Store de Apple.</p>
+      <p>No puedes alquilar, arrendar, prestar, vender, redistribuir ni sublicenciar la aplicación.</p>
+    </div>
+  </div>
+
+  <!-- 02 Intellectual property -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">02</div>
+      <div class="item-title" data-lang="en">Intellectual property</div>
+      <div class="item-title" data-lang="es">Propiedad intelectual</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>The application and all its content — including but not limited to design, text, graphics, rune interpretations, numerological content, affirmations, and code — are the exclusive property of Hugo Andrada and are protected by applicable copyright and intellectual property laws.</p>
+      <p>You may not copy, modify, distribute, sell, or create derivative works from any part of the application without explicit written permission.</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>La aplicación y todo su contenido —incluyendo pero no limitándose a diseño, textos, gráficos, interpretaciones de runas, contenido numerológico, afirmaciones y código— son propiedad exclusiva de Hugo Andrada y están protegidos por las leyes de derechos de autor y propiedad intelectual aplicables.</p>
+      <p>No puedes copiar, modificar, distribuir, vender ni crear obras derivadas de ninguna parte de la aplicación sin permiso escrito explícito.</p>
+    </div>
+  </div>
+
+  <!-- 03 Entertainment disclaimer -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">03</div>
+      <div class="item-title" data-lang="en">Entertainment disclaimer</div>
+      <div class="item-title" data-lang="es">Aviso de entretenimiento</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <div class="disclaimer-box">
+        <strong>⚠ Important notice</strong><br><br>
+        This application and all its content — including rune readings, numerology calculations, horoscopes, affirmations, and any other spiritual or esoteric content — are provided strictly for <strong>entertainment and personal reflection purposes only</strong>.
+      </div>
+      <p>The content does <strong>not</strong> constitute and should <strong>not</strong> be interpreted as:</p>
+      <ul>
+        <li>Professional psychological or psychiatric advice</li>
+        <li>Medical or health advice of any kind</li>
+        <li>Financial, legal, or professional advice</li>
+        <li>A substitute for consultation with qualified professionals</li>
+      </ul>
+      <p>The developer makes no claims regarding the accuracy, completeness, or effectiveness of any spiritual, esoteric, or numerological content. Results are for personal reflection only. If you are experiencing mental health challenges, please consult a qualified professional.</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <div class="disclaimer-box">
+        <strong>⚠ Aviso importante</strong><br><br>
+        Esta aplicación y todo su contenido —incluyendo lecturas de runas, cálculos numerológicos, horóscopos, afirmaciones y cualquier otro contenido espiritual o esotérico— se proporcionan estrictamente con fines de <strong>entretenimiento y reflexión personal únicamente</strong>.
+      </div>
+      <p>El contenido <strong>no</strong> constituye ni debe interpretarse como:</p>
+      <ul>
+        <li>Asesoramiento psicológico o psiquiátrico profesional</li>
+        <li>Consejo médico o de salud de ningún tipo</li>
+        <li>Asesoramiento financiero, legal o profesional</li>
+        <li>Un sustituto de la consulta con profesionales calificados</li>
+      </ul>
+      <p>El desarrollador no hace ninguna afirmación sobre la exactitud, integridad o efectividad de ningún contenido espiritual, esotérico o numerológico. Los resultados son solo para reflexión personal. Si estás atravesando dificultades de salud mental, consulta a un profesional calificado.</p>
+    </div>
+  </div>
+
+  <!-- 04 Restrictions -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">04</div>
+      <div class="item-title" data-lang="en">Restrictions</div>
+      <div class="item-title" data-lang="es">Restricciones</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>You agree not to:</p>
+      <ul>
+        <li>Reverse engineer, decompile, or disassemble the application</li>
+        <li>Use the application for any unlawful purpose</li>
+        <li>Attempt to gain unauthorized access to any part of the application</li>
+        <li>Remove or alter any copyright, trademark, or other proprietary notices</li>
+        <li>Use automated tools to scrape or extract content from the application</li>
+      </ul>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Aceptas no:</p>
+      <ul>
+        <li>Realizar ingeniería inversa, descompilar o desensamblar la aplicación</li>
+        <li>Usar la aplicación para ningún fin ilícito</li>
+        <li>Intentar acceder sin autorización a ninguna parte de la aplicación</li>
+        <li>Eliminar o alterar avisos de copyright, marcas registradas u otros avisos de propiedad</li>
+        <li>Usar herramientas automatizadas para extraer contenido de la aplicación</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 05 Subscriptions -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">05</div>
+      <div class="item-title" data-lang="en">Subscriptions and purchases</div>
+      <div class="item-title" data-lang="es">Suscripciones y compras</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>Some features may require a paid subscription or one-time purchase, processed exclusively through Apple's App Store. All billing, refunds, and subscription management are handled by Apple under their terms.</p>
+      <p>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. You can manage and cancel subscriptions in your Apple ID account settings.</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Algunas funciones pueden requerir una suscripción de pago o una compra única, procesada exclusivamente a través de la App Store de Apple. Toda la facturación, reembolsos y gestión de suscripciones son manejados por Apple bajo sus propios términos.</p>
+      <p>Las suscripciones se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del final del período actual. Puedes gestionar y cancelar suscripciones en la configuración de tu ID de Apple.</p>
+    </div>
+  </div>
+
+  <!-- 06 Termination -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">06</div>
+      <div class="item-title" data-lang="en">Termination</div>
+      <div class="item-title" data-lang="es">Terminación</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>This license is effective until terminated. Your rights under this license will terminate automatically if you fail to comply with any of its terms. Upon termination, you must cease all use of the application and delete all copies.</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Esta licencia es efectiva hasta su terminación. Tus derechos bajo esta licencia se terminarán automáticamente si no cumples con alguno de sus términos. Al terminar, debes cesar todo uso de la aplicación y eliminar todas las copias.</p>
+    </div>
+  </div>
+
+  <!-- 07 Limitation of liability -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">07</div>
+      <div class="item-title" data-lang="en">Limitation of liability</div>
+      <div class="item-title" data-lang="es">Limitación de responsabilidad</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>To the maximum extent permitted by applicable law, Hugo Andrada shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the application.</p>
+      <p>The application is provided "as is" without warranties of any kind, express or implied.</p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>En la máxima medida permitida por la ley aplicable, Hugo Andrada no será responsable de ningún daño indirecto, incidental, especial, consecuente o punitivo resultante del uso o la imposibilidad de usar la aplicación.</p>
+      <p>La aplicación se proporciona "tal cual" sin garantías de ningún tipo, expresas o implícitas.</p>
+    </div>
+  </div>
+
+  <!-- 08 Governing law -->
+  <div class="item">
+    <div class="item-head">
+      <div class="item-num">08</div>
+      <div class="item-title" data-lang="en">Governing law &amp; contact</div>
+      <div class="item-title" data-lang="es">Ley aplicable y contacto</div>
+      <div class="item-arrow">▸</div>
+    </div>
+    <div class="item-body" data-lang="en">
+      <p>These terms are governed by the laws of Argentina. Any disputes shall be resolved in the courts of competent jurisdiction in Argentina.</p>
+      <p>For questions about these terms: <a href="mailto:contact@hugoandrada.dev" style="color:var(--primary)">✉ contact@hugoandrada.dev</a></p>
+    </div>
+    <div class="item-body" data-lang="es">
+      <p>Estos términos se rigen por las leyes de Argentina. Cualquier disputa se resolverá en los tribunales de jurisdicción competente en Argentina.</p>
+      <p>¿Preguntas sobre estos términos? <a href="mailto:contact@hugoandrada.dev" style="color:var(--primary)">✉ contact@hugoandrada.dev</a></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <p>Hugo Andrada · iOS Developer</p>
+  <p style="margin-top:6px"><a href="mailto:contact@hugoandrada.dev">contact@hugoandrada.dev</a></p>
+  <p style="margin-top:12px;font-size:11px;">© 2026 · Last updated: March 2026</p>
+</footer>
+
+<script>
+  function setLang(lang, btn) {
+    document.body.classList.toggle('lang-es', lang === 'es');
+    document.querySelectorAll('.nav-lang button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function setActive(link) {
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    link.classList.add('active');
+  }
+
+  // Highlight nav link based on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
       }
-    };
+    });
+  }, { threshold: 0.3 });
 
-    function setLang(lang) {
-      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('sec-en').classList.toggle('active', lang === 'en');
-      document.getElementById('sec-es').classList.toggle('active', lang === 'es');
-      var s = strings[lang];
-      document.getElementById('main-title').innerHTML = s.title;
-      document.getElementById('main-sub').textContent = s.sub;
-      document.getElementById('footer-date').textContent = s.footerDate;
-      document.getElementById('z1-title').textContent = s.z1t;
-      document.getElementById('z1-desc').textContent = s.z1d;
-      document.getElementById('z2-title').textContent = s.z2t;
-      document.getElementById('z2-desc').textContent = s.z2d;
-      document.getElementById('z3-title').textContent = s.z3t;
-      document.getElementById('z3-desc').textContent = s.z3d;
-      document.documentElement.lang = lang;
-    }
-  </script>
+  document.querySelectorAll('#privacy, #eula').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
