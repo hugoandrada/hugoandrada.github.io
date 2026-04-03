@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad & Términos de Uso — Creative Solutions Apps</title>
+  <meta name="description" content="Política de privacidad y términos de uso de Creative Solutions Apps / Hugo Andrada para apps en Google Play Store y Apple App Store." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f5f3; min-height: 100vh; padding: 24px 16px; }
+
+    .bg { background: #ffffff; padding: 8px; border-radius: 12px; max-width: 760px; margin: 0 auto; }
+    .doc { max-width: 680px; margin: 0 auto; padding: 52px 32px 80px; font-family: 'Inter', sans-serif; font-weight: 300; color: #111111; }
+
+    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 52px; }
+    .brand { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #999999; font-weight: 400; }
+    .lang-wrap { display: flex; gap: 4px; }
+    .lang-btn { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; color: #888888; border: 1px solid #cccccc; padding: 7px 16px; border-radius: 2px; cursor: pointer; transition: all 0.15s; }
+    .lang-btn.active { background: #111111; color: #ffffff; border-color: #111111; }
+    .lang-btn:hover:not(.active) { border-color: #999; color: #555; }
+
+    .doc-title { font-family: 'EB Garamond', serif; font-weight: 400; font-size: 40px; line-height: 1.12; color: #111111; margin-bottom: 20px; letter-spacing: -0.01em; }
+
+    .meta { margin-bottom: 32px; padding-bottom: 28px; border-bottom: 0.5px solid #e0e0e0; }
+    .meta-line { font-size: 13px; color: #999999; line-height: 1.9; }
+    .meta-line strong { color: #555555; font-weight: 400; }
+    .meta-line a { color: #111111; text-decoration: none; border-bottom: 0.5px solid #cccccc; }
+
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #aaaaaa; margin: 56px 0 0; padding-bottom: 16px; border-bottom: 0.5px solid #e0e0e0; }
+
+    .item { border-bottom: 0.5px solid #e0e0e0; padding: 28px 0; }
+    .item:last-child { border-bottom: none; }
+
+    .item-head { display: flex; align-items: baseline; gap: 20px; cursor: pointer; user-select: none; }
+    .item-num { font-size: 11px; font-weight: 400; color: #aaaaaa; letter-spacing: 0.08em; min-width: 20px; }
+    .item-title { font-family: 'EB Garamond', serif; font-size: 19px; font-weight: 400; color: #111111; flex: 1; line-height: 1.3; }
+    .item-arrow { font-size: 10px; color: #aaaaaa; transition: transform 0.18s; }
+    .item.open .item-arrow { transform: rotate(90deg); }
+
+    .item-body { display: none; padding-top: 20px; padding-left: 40px; }
+    .item.open .item-body.show { display: block; }
+
+    .item-body p { font-size: 14px; line-height: 1.85; color: #444444; margin-bottom: 14px; font-weight: 300; }
+    .item-body p:last-child { margin-bottom: 0; }
+    .item-body ul { padding-left: 18px; margin-bottom: 14px; }
+    .item-body ul li { font-size: 14px; line-height: 1.85; color: #444444; margin-bottom: 4px; font-weight: 300; }
+    .item-body strong { color: #111111; font-weight: 400; }
+    .item-body a { color: #111111; text-decoration: none; border-bottom: 0.5px solid #cccccc; }
+
+    .note-box { border-left: 1.5px solid #cccccc; padding: 12px 16px; margin: 16px 0; }
+    .note-box p { font-size: 13px; color: #777777; margin: 0; }
+    .note-box strong { color: #444444; }
+
+    .warn-box { border-left: 1.5px solid #b8960c; background: #fffdf5; padding: 12px 16px; margin: 16px 0; }
+    .warn-box p { font-size: 13px; color: #666650; margin: 0; }
+    .warn-box strong { color: #7a6410; }
+
+    .sources-list { list-style: none; padding: 0; margin: 0; }
+    .sources-list li { font-size: 14px; line-height: 1.85; color: #444444; font-weight: 300; padding: 8px 0; border-bottom: 0.5px solid #f0f0f0; display: flex; gap: 12px; align-items: baseline; }
+    .sources-list li:last-child { border-bottom: none; }
+    .sources-list .src-label { font-size: 11px; color: #aaaaaa; letter-spacing: 0.06em; min-width: 140px; }
+    .sources-list a { color: #111111; text-decoration: none; border-bottom: 0.5px solid #cccccc; font-size: 13px; }
+
+    .contact-block { margin-top: 48px; padding-top: 28px; border-top: 0.5px solid #e0e0e0; }
+    .contact-block p { font-size: 13px; color: #999999; line-height: 1.9; }
+    .contact-block a { color: #111111; text-decoration: none; border-bottom: 0.5px solid #cccccc; }
+
+    @media (max-width: 600px) {
+      .doc { padding: 36px 20px 60px; }
+      .doc-title { font-size: 30px; }
+      .sources-list .src-label { min-width: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg"><div class="doc">
+
+  <div class="top">
+    <span class="brand">Creative Solutions Apps</span>
+    <div class="lang-wrap">
+      <button class="lang-btn active" onclick="setLang('es',this)">ES</button>
+      <button class="lang-btn" onclick="setLang('en',this)">EN</button>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <h2 class="doc-title" id="pp-title">Política de Privacidad</h2>
+  <div class="meta">
+    <div class="meta-line" id="pp-updated">Última actualización: abril de 2026</div>
+    <div class="meta-line" id="pp-platforms">Plataformas: <strong>Google Play Store · Apple App Store</strong></div>
+    <div class="meta-line" id="pp-dev">Desarrollador: <strong>Creative Solutions Apps (Android) · Hugo Andrada (iOS)</strong></div>
+    <div class="meta-line" id="pp-contact">Contacto: <strong><a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></strong></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">01</span><span class="item-title" id="pp-t1">Introducción</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b1-es"><p>Esta Política de Privacidad describe cómo el desarrollador gestiona la información de los usuarios de las aplicaciones móviles publicadas tanto en <strong>Google Play Store</strong> (bajo el nombre de desarrollador <strong>Creative Solutions Apps</strong>) como en la <strong>App Store de Apple</strong> (bajo el nombre de desarrollador <strong>Hugo Andrada</strong>).</p><div class="note-box"><p><strong>Resumen:</strong> No recopilamos, almacenamos, procesamos ni compartimos ningún dato tuyo. Esto aplica por igual a todas nuestras apps en Android e iOS.</p></div></div>
+    <div class="item-body" id="pp-b1-en"><p>This Privacy Policy describes how the developer handles information from users of mobile applications published on both the <strong>Google Play Store</strong> (under the developer name <strong>Creative Solutions Apps</strong>) and the <strong>Apple App Store</strong> (under the developer name <strong>Hugo Andrada</strong>).</p><div class="note-box"><p><strong>Summary:</strong> We do not collect, store, process, or share any of your data. This applies equally to all our apps on Android and iOS.</p></div></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">02</span><span class="item-title" id="pp-t2">Información que NO recopilamos</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b2-es"><p>Todas las aplicaciones están diseñadas con una filosofía de privacidad total. No recopilamos ningún tipo de información, incluyendo:</p><ul><li>Nombre, correo electrónico, número de teléfono u otra información de identidad personal</li><li>Ubicación geográfica o datos GPS</li><li>Historial de uso, sesiones o comportamiento dentro de la app</li><li>Identificadores del dispositivo (Android Advertising ID, IDFA, IDFV, etc.)</li><li>Datos de salud, financieros o cualquier categoría sensible</li><li>Cookies, rastreadores o tecnologías de seguimiento</li><li>Direcciones IP o datos de red</li><li>Contactos, fotos, micrófono u otros recursos del dispositivo</li></ul></div>
+    <div class="item-body" id="pp-b2-en"><p>All applications are built on a total-privacy philosophy. We do not collect any type of information, including:</p><ul><li>Name, email address, phone number, or any other personal identity information</li><li>Geographic location or GPS data</li><li>Usage history, sessions, or in-app behavior</li><li>Device identifiers (Android Advertising ID, IDFA, IDFV, etc.)</li><li>Health, financial, or any other sensitive category of data</li><li>Cookies, trackers, or any tracking technologies</li><li>IP addresses or network data</li><li>Contacts, photos, microphone, or other device resources</li></ul></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">03</span><span class="item-title" id="pp-t3">Almacenamiento local únicamente</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b3-es"><p>Todos los datos que introduzcas en cualquiera de nuestras aplicaciones se almacenan <strong>exclusivamente en tu propio dispositivo</strong>. En Android se usa almacenamiento nativo (<strong>SharedPreferences / Room DB</strong>); en iOS, almacenamiento nativo (<strong>UserDefaults / SwiftData</strong>).</p><ul><li>Nadie más, incluido el desarrollador, puede acceder a tus datos</li><li>Si desinstalás la app, todos los datos se eliminan permanentemente</li><li>Las copias de seguridad mediante Google Drive (Android) o iCloud (iOS) quedan bajo las condiciones de Google o Apple respectivamente</li></ul></div>
+    <div class="item-body" id="pp-b3-en"><p>All data you enter into any of our applications is stored <strong>exclusively on your own device</strong>. On Android, native storage is used (<strong>SharedPreferences / Room DB</strong>); on iOS, native storage (<strong>UserDefaults / SwiftData</strong>).</p><ul><li>No one else, including the developer, can access your data</li><li>If you uninstall the app, all data is permanently deleted</li><li>Backups via Google Drive (Android) or iCloud (iOS) are governed by Google's or Apple's own terms respectively</li></ul></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">04</span><span class="item-title" id="pp-t4">Sin conexión a servidores externos</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b4-es"><p>Ninguna de nuestras aplicaciones se comunica con servidores externos propios. No existe infraestructura backend que reciba tu información. Todas las apps funcionan de manera completamente autónoma en tu dispositivo.</p><div class="note-box"><p><strong>Nota sobre servicios de terceros:</strong> Si alguna app incorpora herramientas como Google Play Billing, RevenueCat o el sistema de compras de Apple, dichos servicios gestionan los datos de transacción según sus propias políticas. El desarrollador no accede a esa información en ningún caso.</p></div></div>
+    <div class="item-body" id="pp-b4-en"><p>None of our applications communicate with any external servers owned by the developer. There is no backend infrastructure receiving your information. All apps operate entirely and autonomously on your device.</p><div class="note-box"><p><strong>Note on third-party services:</strong> If any app includes tools such as Google Play Billing, RevenueCat, or Apple's In-App Purchase, those services handle transaction data according to their own privacy policies. The developer does not access that information in any way.</p></div></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">05</span><span class="item-title" id="pp-t5">Compras y suscripciones</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b5-es"><p>Si alguna aplicación ofrece compras integradas o suscripciones, estas son procesadas directamente por la tienda correspondiente. En Android, por <strong>Google</strong> (Google Play Billing); en iOS, por <strong>Apple</strong> (App Store). El desarrollador no recibe ni almacena datos de pago en ningún caso.</p><p>Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br>Política de privacidad de Apple: <a href="https://www.apple.com/legal/privacy/es/" target="_blank">apple.com/legal/privacy</a></p></div>
+    <div class="item-body" id="pp-b5-en"><p>If any application offers in-app purchases or subscriptions, these are processed directly by the respective platform store. On Android, by <strong>Google</strong> (Google Play Billing); on iOS, by <strong>Apple</strong> (App Store). The developer does not receive or store any payment data.</p><p>Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br>Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">06</span><span class="item-title" id="pp-t6">Menores de edad</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b6-es"><p>Dado que no recopilamos ningún dato, no existe riesgo de tratamiento de información de menores. Nuestras aplicaciones no recopilan información de personas de ninguna edad, incluidos menores de 13 años (COPPA) o de 16 años (GDPR).</p></div>
+    <div class="item-body" id="pp-b6-en"><p>Since we do not collect any data, there is no risk of processing information from minors. Our applications do not collect information from people of any age, including children under 13 (COPPA) or under 16 (GDPR).</p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">07</span><span class="item-title" id="pp-t7">Tus derechos</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b7-es"><p>Como no recopilamos ni almacenamos ningún dato, el control total de tu información es tuyo desde el primer momento.</p><ul><li>Podés eliminar todos tus datos desinstalando la aplicación</li><li>No necesitás solicitarnos la eliminación de datos porque no tenemos ninguno</li><li>No recibirás comunicaciones comerciales porque no tenemos tu correo ni teléfono</li></ul></div>
+    <div class="item-body" id="pp-b7-en"><p>Since we do not collect or store any data, you have full control of your information from the very first moment.</p><ul><li>You can delete all your data by uninstalling the application</li><li>You do not need to request data deletion from us because we hold none</li><li>You will not receive marketing communications because we do not have your email or phone number</li></ul></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">08</span><span class="item-title" id="pp-t8">Cambios en esta política</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="pp-b8-es"><p>Si en el futuro se realizan cambios significativos en esta política, se notificará mediante una actualización de la aplicación en Google Play Store y App Store, donde los cambios serán descritos en las notas de la versión.</p></div>
+    <div class="item-body" id="pp-b8-en"><p>If significant changes are made to this privacy policy in the future, users will be notified through an application update on both the Google Play Store and the App Store, where changes will be described in the version release notes.</p></div>
+  </div>
+
+  <!-- EULA -->
+  <p class="section-label" id="eula-label">02 — Términos de Uso (EULA)</p>
+  <h2 class="doc-title" id="eula-title" style="margin-top:24px;">Términos de Uso</h2>
+  <div class="meta">
+    <div class="meta-line" id="eula-updated">Acuerdo de Licencia de Usuario Final · Última actualización: abril de 2026</div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">01</span><span class="item-title" id="eu-t1">Licencia de uso</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b1-es"><p><strong>Creative Solutions Apps</strong> (para apps Android) y <strong>Hugo Andrada</strong> (para apps iOS) te otorgan una licencia personal, no exclusiva, intransferible y limitada para descargar y usar la aplicación correspondiente en cualquier dispositivo compatible que poseas o controles, sujeta a los términos de este acuerdo y las condiciones de servicio de la tienda correspondiente.</p><p>No podés alquilar, arrendar, prestar, vender, redistribuir ni sublicenciar ninguna aplicación.</p></div>
+    <div class="item-body" id="eu-b1-en"><p><strong>Creative Solutions Apps</strong> (for Android apps) and <strong>Hugo Andrada</strong> (for iOS apps) grant you a personal, non-exclusive, non-transferable, limited license to download and use the respective application on any compatible device you own or control, subject to the terms of this agreement and the applicable store's Terms of Service.</p><p>You may not rent, lease, lend, sell, redistribute, or sublicense any application.</p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">02</span><span class="item-title" id="eu-t2">Propiedad intelectual</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b2-es"><p>Todas las aplicaciones y su contenido —incluyendo diseño, textos, gráficos, contenido digital y código— son propiedad exclusiva de <strong>Creative Solutions Apps / Hugo Andrada</strong> y están protegidos por las leyes de derechos de autor aplicables.</p><p>No podés copiar, modificar, distribuir, vender ni crear obras derivadas de ninguna parte de ninguna aplicación sin permiso escrito explícito.</p></div>
+    <div class="item-body" id="eu-b2-en"><p>All applications and their content — including design, text, graphics, digital content, and code — are the exclusive property of <strong>Creative Solutions Apps / Hugo Andrada</strong> and are protected by applicable copyright and intellectual property laws.</p><p>You may not copy, modify, distribute, sell, or create derivative works from any part of any application without explicit written permission.</p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">03</span><span class="item-title" id="eu-t3">Aviso de entretenimiento</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b3-es">
+      <div class="warn-box"><p><strong>Aviso importante:</strong> Todas las aplicaciones —incluyendo contenido numerológico, horóscopos, afirmaciones y cualquier otro contenido espiritual o esotérico— se proporcionan estrictamente con fines de <strong>entretenimiento y reflexión personal únicamente</strong>.</p></div>
+      <p>El contenido no constituye ni debe interpretarse como:</p>
+      <ul><li>Asesoramiento psicológico o psiquiátrico profesional</li><li>Consejo médico o de salud de ningún tipo</li><li>Asesoramiento financiero, legal o profesional</li><li>Un sustituto de la consulta con profesionales calificados</li></ul>
+      <p>El desarrollador no hace ninguna afirmación sobre la exactitud o efectividad de ningún contenido espiritual, esotérico o numerológico. Si estás atravesando dificultades de salud mental, consultá a un profesional calificado.</p>
+    </div>
+    <div class="item-body" id="eu-b3-en">
+      <div class="warn-box"><p><strong>Important notice:</strong> All applications — including numerological content, horoscopes, affirmations, and any other spiritual or esoteric content — are provided strictly for <strong>entertainment and personal reflection purposes only</strong>.</p></div>
+      <p>The content does not constitute and should not be interpreted as:</p>
+      <ul><li>Professional psychological or psychiatric advice</li><li>Medical or health advice of any kind</li><li>Financial, legal, or professional advice</li><li>A substitute for consultation with qualified professionals</li></ul>
+      <p>The developer makes no claims regarding the accuracy or effectiveness of any spiritual, esoteric, or numerological content. If you are experiencing mental health challenges, please consult a qualified professional.</p>
+    </div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">04</span><span class="item-title" id="eu-t4">Restricciones</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b4-es"><p>Aceptás no:</p><ul><li>Realizar ingeniería inversa, descompilar o desensamblar ninguna aplicación</li><li>Usar ninguna aplicación para ningún fin ilícito</li><li>Intentar acceder sin autorización a ninguna parte de ninguna aplicación</li><li>Eliminar o alterar avisos de copyright, marcas registradas u otros avisos de propiedad</li><li>Usar herramientas automatizadas para extraer contenido de ninguna aplicación</li></ul></div>
+    <div class="item-body" id="eu-b4-en"><p>You agree not to:</p><ul><li>Reverse engineer, decompile, or disassemble any application</li><li>Use any application for any unlawful purpose</li><li>Attempt to gain unauthorized access to any part of any application</li><li>Remove or alter any copyright, trademark, or other proprietary notices</li><li>Use automated tools to scrape or extract content from any application</li></ul></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">05</span><span class="item-title" id="eu-t5">Suscripciones y compras</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b5-es"><p>Algunas funciones pueden requerir una suscripción de pago o una compra única, procesada exclusivamente a través de la tienda correspondiente. En Android, la facturación, reembolsos y gestión de suscripciones son manejados por <strong>Google</strong> (Google Play); en iOS, por <strong>Apple</strong> (App Store).</p><p>Las suscripciones se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del final del período actual.</p></div>
+    <div class="item-body" id="eu-b5-en"><p>Some features may require a paid subscription or one-time purchase, processed exclusively through the respective platform store. On Android, billing, refunds, and subscription management are handled by <strong>Google</strong> (Google Play); on iOS, by <strong>Apple</strong> (App Store).</p><p>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">06</span><span class="item-title" id="eu-t6">Terminación</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b6-es"><p>Esta licencia es efectiva hasta su terminación. Tus derechos bajo esta licencia se terminarán automáticamente si no cumplís con alguno de sus términos. Al terminar, debés cesar todo uso de la aplicación y eliminar todas las copias de tu dispositivo.</p></div>
+    <div class="item-body" id="eu-b6-en"><p>This license is effective until terminated. Your rights under this license will terminate automatically if you fail to comply with any of its terms. Upon termination, you must cease all use of the application and delete all copies from your device.</p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">07</span><span class="item-title" id="eu-t7">Limitación de responsabilidad</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b7-es"><p>En la máxima medida permitida por la ley aplicable, <strong>Creative Solutions Apps / Hugo Andrada</strong> no será responsable de ningún daño indirecto, incidental, especial, consecuente o punitivo resultante del uso o la imposibilidad de usar ninguna aplicación.</p><p>Todas las aplicaciones se proporcionan "tal cual" sin garantías de ningún tipo, expresas o implícitas.</p></div>
+    <div class="item-body" id="eu-b7-en"><p>To the maximum extent permitted by applicable law, <strong>Creative Solutions Apps / Hugo Andrada</strong> shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use any application.</p><p>All applications are provided "as is" without warranties of any kind, express or implied.</p></div>
+  </div>
+
+  <div class="item open"><div class="item-head" onclick="tog(this)"><span class="item-num">08</span><span class="item-title" id="eu-t8">Ley aplicable y contacto</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="eu-b8-es"><p>Estos términos se rigen por las leyes de Argentina. Cualquier disputa se resolverá en los tribunales de jurisdicción competente en Argentina.</p><p>¿Preguntas sobre estos términos? <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></p></div>
+    <div class="item-body" id="eu-b8-en"><p>These terms are governed by the laws of Argentina. Any disputes shall be resolved in the courts of competent jurisdiction in Argentina.</p><p>Questions about these terms? <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></p></div>
+  </div>
+
+  <!-- FUENTES -->
+  <p class="section-label" id="src-label">03 — Fuentes de datos externas</p>
+  <h2 class="doc-title" id="src-title" style="margin-top:24px;">Fuentes y enlaces</h2>
+  <div class="meta" style="margin-bottom:0;">
+    <div class="meta-line" id="src-desc">Servicios de terceros referenciados en este documento y sus políticas de privacidad.</div>
+  </div>
+
+  <div class="item open" style="border-top: 0.5px solid #e0e0e0; margin-top:0;"><div class="item-head" onclick="tog(this)"><span class="item-num"></span><span class="item-title" id="src-t1" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:#555;">Enlaces de referencia</span><span class="item-arrow">▸</span></div>
+    <div class="item-body show" id="src-b-es" style="padding-left:0;"><ul class="sources-list">
+      <li><span class="src-label">Google Play · Privacidad</span><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      <li><span class="src-label">Google Play · Términos</span><a href="https://play.google.com/about/play-terms/" target="_blank">play.google.com/about/play-terms</a></li>
+      <li><span class="src-label">Apple · Privacidad</span><a href="https://www.apple.com/legal/privacy/es/" target="_blank">apple.com/legal/privacy</a></li>
+      <li><span class="src-label">Apple · Términos App Store</span><a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank">apple.com/legal/internet-services/itunes</a></li>
+      <li><span class="src-label">RevenueCat · Privacidad</span><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></li>
+      <li><span class="src-label">COPPA (EE.UU.)</span><a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank">ftc.gov · COPPA Rule</a></li>
+      <li><span class="src-label">GDPR (Europa)</span><a href="https://gdpr.eu/privacy-notice/" target="_blank">gdpr.eu/privacy-notice</a></li>
+    </ul></div>
+    <div class="item-body" id="src-b-en" style="padding-left:0;"><ul class="sources-list">
+      <li><span class="src-label">Google Play · Privacy</span><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      <li><span class="src-label">Google Play · Terms</span><a href="https://play.google.com/about/play-terms/" target="_blank">play.google.com/about/play-terms</a></li>
+      <li><span class="src-label">Apple · Privacy</span><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></li>
+      <li><span class="src-label">Apple · App Store Terms</span><a href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank">apple.com/legal/internet-services/itunes</a></li>
+      <li><span class="src-label">RevenueCat · Privacy</span><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></li>
+      <li><span class="src-label">COPPA (US)</span><a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank">ftc.gov · COPPA Rule</a></li>
+      <li><span class="src-label">GDPR (Europe)</span><a href="https://gdpr.eu/privacy-notice/" target="_blank">gdpr.eu/privacy-notice</a></li>
+    </ul></div>
+  </div>
+
+  <div class="contact-block">
+    <p id="contact-label">Consultas sobre privacidad y soporte:</p>
+    <p><a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></p>
+    <p style="margin-top:12px;font-size:12px;color:#bbbbbb;">© 2026 · Creative Solutions Apps / Hugo Andrada · Android &amp; iOS</p>
+  </div>
+
+</div></div>
+
+<script>
+  const L = {
+    es: {
+      ppTitle:'Política de Privacidad', ppUpdated:'Última actualización: abril de 2026',
+      ppPlatforms:'Plataformas: <strong>Google Play Store · Apple App Store</strong>',
+      ppDev:'Desarrollador: <strong>Creative Solutions Apps (Android) · Hugo Andrada (iOS)</strong>',
+      ppContact:'Contacto: <strong><a href="mailto:hugo.andrada.dev@gmail.com" style="color:#111;text-decoration:none;border-bottom:0.5px solid #ccc">hugo.andrada.dev@gmail.com</a></strong>',
+      eulaLabel:'02 — Términos de Uso (EULA)', eulaTitle:'Términos de Uso',
+      eulaUpdated:'Acuerdo de Licencia de Usuario Final · Última actualización: abril de 2026',
+      srcLabel:'03 — Fuentes de datos externas', srcTitle:'Fuentes y enlaces',
+      srcDesc:'Servicios de terceros referenciados en este documento y sus políticas de privacidad.',
+      contactLabel:'Consultas sobre privacidad y soporte:',
+      ppt:['Introducción','Información que NO recopilamos','Almacenamiento local únicamente','Sin conexión a servidores externos','Compras y suscripciones','Menores de edad','Tus derechos','Cambios en esta política'],
+      eut:['Licencia de uso','Propiedad intelectual','Aviso de entretenimiento','Restricciones','Suscripciones y compras','Terminación','Limitación de responsabilidad','Ley aplicable y contacto'],
+      srcT:'Enlaces de referencia',
+    },
+    en: {
+      ppTitle:'Privacy Policy', ppUpdated:'Last updated: April 2026',
+      ppPlatforms:'Platforms: <strong>Google Play Store · Apple App Store</strong>',
+      ppDev:'Developer: <strong>Creative Solutions Apps (Android) · Hugo Andrada (iOS)</strong>',
+      ppContact:'Contact: <strong><a href="mailto:hugo.andrada.dev@gmail.com" style="color:#111;text-decoration:none;border-bottom:0.5px solid #ccc">hugo.andrada.dev@gmail.com</a></strong>',
+      eulaLabel:'02 — Terms of Use (EULA)', eulaTitle:'Terms of Use',
+      eulaUpdated:'End User License Agreement · Last updated: April 2026',
+      srcLabel:'03 — External data sources', srcTitle:'Sources & links',
+      srcDesc:'Third-party services referenced in this document and their privacy policies.',
+      contactLabel:'Privacy and support inquiries:',
+      ppt:['Introduction','Information we do NOT collect','Local storage only','No external server connections','Purchases and subscriptions',"Children's privacy",'Your rights','Changes to this policy'],
+      eut:['License grant','Intellectual property','Entertainment disclaimer','Restrictions','Subscriptions and purchases','Termination','Limitation of liability','Governing law & contact'],
+      srcT:'Reference links',
+    }
+  };
+
+  let lang = 'es';
+
+  function setLang(l, btn) {
+    lang = l;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = L[l];
+    document.getElementById('pp-title').textContent      = d.ppTitle;
+    document.getElementById('pp-updated').innerHTML      = d.ppUpdated;
+    document.getElementById('pp-platforms').innerHTML    = d.ppPlatforms;
+    document.getElementById('pp-dev').innerHTML          = d.ppDev;
+    document.getElementById('pp-contact').innerHTML      = d.ppContact;
+    document.getElementById('eula-label').textContent    = d.eulaLabel;
+    document.getElementById('eula-title').textContent    = d.eulaTitle;
+    document.getElementById('eula-updated').textContent  = d.eulaUpdated;
+    document.getElementById('src-label').textContent     = d.srcLabel;
+    document.getElementById('src-title').textContent     = d.srcTitle;
+    document.getElementById('src-desc').textContent      = d.srcDesc;
+    document.getElementById('contact-label').textContent = d.contactLabel;
+    document.getElementById('src-t1').textContent        = d.srcT;
+    for (let i = 1; i <= 8; i++) {
+      document.getElementById('pp-t' + i).textContent = d.ppt[i - 1];
+      document.getElementById('eu-t' + i).textContent = d.eut[i - 1];
+      const esEl = document.getElementById('pp-b' + i + '-es');
+      const enEl = document.getElementById('pp-b' + i + '-en');
+      const euEs = document.getElementById('eu-b' + i + '-es');
+      const euEn = document.getElementById('eu-b' + i + '-en');
+      if (esEl) { esEl.classList.toggle('show', l === 'es'); }
+      if (enEl) { enEl.classList.toggle('show', l === 'en'); }
+      if (euEs) { euEs.classList.toggle('show', l === 'es'); }
+      if (euEn) { euEn.classList.toggle('show', l === 'en'); }
+    }
+    const srcEs = document.getElementById('src-b-es');
+    const srcEn = document.getElementById('src-b-en');
+    if (srcEs) srcEs.classList.toggle('show', l === 'es');
+    if (srcEn) srcEn.classList.toggle('show', l === 'en');
+  }
+
+  function tog(head) {
+    const item = head.parentElement;
+    const isOpen = item.classList.contains('open');
+    if (isOpen) {
+      item.classList.remove('open');
+      item.querySelectorAll('.item-body').forEach(b => b.classList.remove('show'));
+    } else {
+      item.classList.add('open');
+      // Show only the body matching the current language
+      item.querySelectorAll('.item-body').forEach(b => {
+        const id = b.id || '';
+        const isLangMatch = id.endsWith('-' + lang) || (!id.includes('-es') && !id.includes('-en'));
+        b.classList.toggle('show', isLangMatch);
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
