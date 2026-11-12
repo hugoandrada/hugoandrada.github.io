@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidad &amp; Términos de Uso — Creative Solutions Apps</title>
-<meta name="description" content="Política de privacidad y términos de uso de Creative Solutions Apps / Hugo Andrada para apps en Google Play Store y Apple App Store.">
+<title>Política de Privacidad y Términos de Uso — Creative Solutions Apps</title>
+<meta name="description" content="Política de privacidad y términos de uso de las apps de Creative Solutions Apps y Hugo Andrada en Google Play y App Store.">
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #FAFAF8;
-    --bg-elevated: #FFFFFF;
+    --surface: #FFFFFF;
     --border: #E7E5E0;
     --border-soft: #F0EEE9;
     --ink: #1C1B19;
-    --ink-secondary: #5C5A54;
-    --ink-tertiary: #94918A;
+    --ink-2: #4F4D47;
+    --ink-3: #6F6C65;
     --accent: #2F6F5E;
     --accent-soft: #E7F0EC;
-    --warn-bg: #FBF3E7;
-    --warn-border: #EED9B6;
-    --warn-ink: #7A5A1E;
+    --accent-line: #CFE3DA;
+    --accent-ink: #1E4A3E;
+    --focus: #2F6F5E;
     --radius: 14px;
     --maxw: 880px;
   }
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; scroll-padding-top:90px; }
   body{
     margin:0;
     background:var(--bg);
@@ -34,553 +35,484 @@
     -webkit-font-smoothing:antialiased;
     line-height:1.65;
   }
-  a{ color:var(--accent); text-decoration:none; }
-  a:hover{ text-decoration:underline; }
-  code, .mono{ font-family:'IBM Plex Mono', monospace; }
+  a{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; }
+  a:hover{ text-decoration-thickness:2px; }
+  :focus-visible{ outline:2px solid var(--focus); outline-offset:2px; border-radius:6px; }
 
+  /* Barra superior */
   .topbar{
     position:sticky; top:0; z-index:50;
-    background:rgba(250,250,248,0.85);
+    background:rgba(250,250,248,0.9);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border-soft);
   }
   .topbar-inner{
     max-width:var(--maxw); margin:0 auto;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:14px 24px;
   }
   .brand{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:14.5px; letter-spacing:-0.01em; }
   .brand-mark{
     width:28px; height:28px; border-radius:8px;
     background:linear-gradient(135deg, var(--accent), #4C9A82);
     display:flex; align-items:center; justify-content:center;
-    color:#fff; font-size:13px; font-weight:800;
-    flex:none;
+    color:#fff; font-size:13px; font-weight:800; flex:none;
   }
   .lang-toggle{
-    display:flex; background:var(--bg-elevated); border:1px solid var(--border);
+    display:flex; background:var(--surface); border:1px solid var(--border);
     border-radius:100px; padding:3px; gap:2px;
   }
   .lang-toggle button{
     border:none; background:transparent; padding:6px 13px; border-radius:100px;
-    font-family:inherit; font-size:12.5px; font-weight:600; color:var(--ink-tertiary);
+    font-family:inherit; font-size:12.5px; font-weight:600; color:var(--ink-2);
     cursor:pointer; transition:.15s;
   }
-  .lang-toggle button.active{ background:var(--ink); color:#fff; }
+  .lang-toggle button[aria-pressed="true"]{ background:var(--ink); color:#fff; }
 
-  .hero{ max-width:var(--maxw); margin:0 auto; padding:56px 24px 32px; }
+  /* Cabecera */
+  .hero{ max-width:var(--maxw); margin:0 auto; padding:52px 24px 28px; }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
     font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--accent); background:var(--accent-soft);
+    color:var(--accent-ink); background:var(--accent-soft);
     padding:6px 12px; border-radius:100px; margin-bottom:18px;
   }
   .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
   h1{ font-size:clamp(28px,4vw,40px); line-height:1.1; letter-spacing:-0.02em; margin:0 0 14px; font-weight:800; }
-  .lead{ font-size:16px; color:var(--ink-secondary); max-width:60ch; margin:0 0 26px; }
+  .lead{ font-size:16px; color:var(--ink-2); max-width:62ch; margin:0 0 24px; }
   .meta-row{ display:flex; flex-wrap:wrap; gap:10px; }
   .meta-chip{
-    font-size:12.5px; color:var(--ink-secondary); background:var(--bg-elevated);
+    font-size:13px; color:var(--ink-2); background:var(--surface);
     border:1px solid var(--border); padding:7px 13px; border-radius:100px;
-    display:flex; align-items:center; gap:6px;
   }
 
-  .layout{ max-width:var(--maxw); margin:0 auto; padding:8px 24px 100px; display:grid; grid-template-columns:220px 1fr; gap:40px; }
-  @media (max-width:860px){ .layout{ grid-template-columns:1fr; } .toc{ display:none; } }
-
-  .toc{ position:sticky; top:90px; align-self:start; max-height:calc(100vh - 110px); overflow-y:auto; }
-  .toc-label{ font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-tertiary); margin-bottom:12px; }
+  /* Diseño con índice */
+  .layout{ max-width:var(--maxw); margin:0 auto; padding:8px 24px 40px; display:grid; grid-template-columns:200px 1fr; gap:40px; }
+  .toc{ position:sticky; top:86px; align-self:start; }
+  .toc-label{ font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); margin:0 0 10px; }
+  .toc ol{ list-style:none; margin:0 0 20px; padding:0; }
   .toc a{
-    display:block; font-size:13px; color:var(--ink-secondary); padding:6px 0;
-    border-left:2px solid var(--border-soft); padding-left:14px; margin-left:-1px;
-    transition:.15s;
+    display:block; font-size:13.5px; color:var(--ink-2); padding:6px 0 6px 14px;
+    border-left:2px solid var(--border-soft); text-decoration:none;
   }
-  .toc a:hover{ color:var(--ink); text-decoration:none; border-left-color:var(--ink-tertiary); }
-  .toc a.doc-heading{ font-weight:700; color:var(--ink); margin-top:16px; border-left-color:transparent; padding-left:0; }
-  .toc a.doc-heading:first-child{ margin-top:0; }
-
+  .toc a:hover{ color:var(--ink); border-left-color:var(--ink-3); }
+  .toc a.toc-doc{ font-weight:700; color:var(--ink); border-left-color:transparent; padding-left:0; margin-top:12px; }
   main{ min-width:0; }
 
+  @media (max-width:860px){
+    .layout{ grid-template-columns:1fr; gap:0; }
+    .toc{ position:static; margin-bottom:12px; }
+    .toc ol{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+    .toc a{ border:1px solid var(--border); border-radius:100px; padding:6px 12px; background:var(--surface); font-size:13px; }
+    .toc a.toc-doc{ display:none; }
+  }
+
+  /* Documentos y secciones */
   .doc-title{
     display:flex; align-items:center; gap:12px;
-    font-size:13px; font-weight:700; color:var(--ink-tertiary);
+    font-size:13px; font-weight:700; color:var(--ink-3);
     letter-spacing:.04em; text-transform:uppercase;
-    margin:44px 0 18px; padding-top:8px;
+    margin:40px 0 16px; scroll-margin-top:90px;
   }
   .doc-title::after{ content:""; flex:1; height:1px; background:var(--border); }
-  .doc-title.first{ margin-top:0; }
+  .doc-title:first-child{ margin-top:0; }
 
-  .callout{
-    background:var(--accent-soft); border:1px solid #CFE3DA; border-radius:var(--radius);
-    padding:18px 20px; margin:0 0 32px; font-size:14.5px; color:#1E4A3E;
+  .summary{
+    background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:var(--radius);
+    padding:16px 20px; margin:0 0 16px; font-size:15px; color:var(--accent-ink);
   }
-  .callout strong{ color:var(--accent); }
+  .summary strong{ color:var(--accent-ink); }
 
-  .section{
-    background:var(--bg-elevated); border:1px solid var(--border);
-    border-radius:var(--radius); margin-bottom:12px; overflow:hidden;
+  details.section{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); margin-bottom:10px; scroll-margin-top:90px;
   }
-  .section-head{
+  details.section > summary{
     display:flex; align-items:center; gap:14px; cursor:pointer;
-    padding:18px 20px; user-select:none;
+    padding:16px 20px; list-style:none; font-size:15px; font-weight:600; letter-spacing:-0.01em;
   }
+  details.section > summary::-webkit-details-marker{ display:none; }
   .section-num{
     font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600;
-    color:var(--ink-tertiary); background:var(--bg); border:1px solid var(--border);
+    color:var(--ink-2); background:var(--bg); border:1px solid var(--border);
     width:28px; height:28px; border-radius:8px; flex:none;
     display:flex; align-items:center; justify-content:center;
   }
-  .section-head h3{ font-size:15px; font-weight:600; margin:0; flex:1; letter-spacing:-0.01em; }
-  .chevron{ color:var(--ink-tertiary); transition:transform .2s; flex:none; }
-  .section.open .chevron{ transform:rotate(90deg); }
-  .section-body{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
-  .section.open .section-body{ max-height:2400px; }
-  .section-body-inner{ padding:0 20px 22px 62px; font-size:14.5px; color:var(--ink-secondary); }
-  .section-body-inner p{ margin:0 0 12px; }
-  .section-body-inner ul{ margin:0 0 12px; padding-left:20px; }
-  .section-body-inner li{ margin-bottom:6px; }
-  .section-body-inner strong{ color:var(--ink); font-weight:600; }
+  .section-title{ flex:1; }
+  .chevron{ color:var(--ink-3); transition:transform .2s; flex:none; }
+  details[open] > summary .chevron{ transform:rotate(90deg); }
+  .section-body{ padding:0 20px 20px 62px; font-size:15px; color:var(--ink-2); }
+  .section-body p{ margin:0 0 12px; }
+  .section-body ul{ margin:0 0 12px; padding-left:20px; }
+  .section-body li{ margin-bottom:6px; }
+  .section-body strong{ color:var(--ink); font-weight:600; }
 
-  .badge-new{
-    font-size:10px; font-weight:700; letter-spacing:.03em; text-transform:uppercase;
-    color:var(--accent); background:var(--accent-soft); border-radius:100px;
-    padding:3px 8px; flex:none;
+  .note{
+    background:#FBF3E7; border:1px solid #EED9B6; border-radius:12px;
+    padding:14px 16px; margin:4px 0 0; font-size:14px; color:#7A5A1E;
   }
-
-  .ads-note{
-    background:var(--warn-bg); border:1px solid var(--warn-border); border-radius:12px;
-    padding:14px 16px; margin-top:4px; font-size:14px; color:var(--warn-ink);
-  }
-  .ads-note-title{ font-weight:700; font-size:13px; margin-bottom:6px; display:flex; align-items:center; gap:7px; }
 
   .link-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:6px; }
-  @media (max-width:520px){ .link-grid{ grid-template-columns:1fr; } }
+  @media (max-width:520px){ .link-grid{ grid-template-columns:1fr; } .section-body{ padding-left:20px; } }
   .link-card{
     display:flex; align-items:center; justify-content:space-between; gap:10px;
-    background:var(--bg-elevated); border:1px solid var(--border); border-radius:10px;
-    padding:11px 13px; font-size:13px; color:var(--ink); transition:.15s;
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:11px 13px; font-size:13.5px; color:var(--ink); text-decoration:none;
   }
-  .link-card:hover{ border-color:var(--accent); text-decoration:none; background:var(--accent-soft); }
-  .link-card span.arrow{ color:var(--ink-tertiary); }
+  .link-card:hover{ border-color:var(--accent); background:var(--accent-soft); }
 
   footer{
-    max-width:var(--maxw); margin:40px auto 0; padding:28px 24px 60px;
+    max-width:var(--maxw); margin:24px auto 0; padding:24px 24px 56px;
     border-top:1px solid var(--border-soft);
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-    font-size:12.5px; color:var(--ink-tertiary);
+    font-size:13px; color:var(--ink-3);
   }
-  footer a{ color:var(--ink-secondary); }
+  footer a{ color:var(--ink-2); }
 
+  /* Idioma */
   html[data-lang="en"] .es{ display:none !important; }
   html[data-lang="es"] .en{ display:none !important; }
 </style>
 </head>
 <body>
 
-<div class="topbar">
+<header class="topbar">
   <div class="topbar-inner">
     <div class="brand">
-      <div class="brand-mark">CS</div>
+      <div class="brand-mark" aria-hidden="true">CS</div>
       Creative Solutions Apps
     </div>
-    <div class="lang-toggle">
-      <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
-      <button id="btn-en" onclick="setLang('en')">EN</button>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button id="btn-es" type="button" aria-pressed="true" onclick="setLang('es')">ES</button>
+      <button id="btn-en" type="button" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
   </div>
-</div>
+</header>
 
 <div class="hero">
-  <div class="eyebrow"><span class="dot"></span> <span class="es">Documentos legales</span><span class="en">Legal documents</span></div>
-  <h1><span class="es">Privacidad &amp; Términos de Uso</span><span class="en">Privacy &amp; Terms of Use</span></h1>
+  <div class="eyebrow"><span class="dot" aria-hidden="true"></span> <span class="es">Documentos legales</span><span class="en">Legal documents</span></div>
+  <h1><span class="es">Privacidad y Términos de Uso</span><span class="en">Privacy and Terms of Use</span></h1>
   <p class="lead">
-    <span class="es">Esta Política de Privacidad describe cómo el desarrollador gestiona la información de los usuarios de las aplicaciones móviles publicadas tanto en Google Play Store (Creative Solutions Apps) como en la App Store de Apple (Hugo Andrada).</span>
-    <span class="en">This Privacy Policy describes how the developer handles information from users of mobile applications published on both the Google Play Store (Creative Solutions Apps) and the Apple App Store (Hugo Andrada).</span>
+    <span class="es">Explicamos qué información tratan nuestras apps en Google Play y App Store. En resumen: no recopilamos datos personales. La única información que puede tratarse es el identificador de publicidad de tu dispositivo, que usa Google AdMob en las apps que muestran anuncios.</span>
+    <span class="en">We explain what information our apps handle on Google Play and the App Store. In short: we do not collect personal data. The only information that may be processed is your device's advertising identifier, used by Google AdMob in apps that show ads.</span>
   </p>
   <div class="meta-row">
-    <div class="meta-chip">🗓️ <span class="es">Última actualización: julio 2026</span><span class="en">Last updated: July 2026</span></div>
-    <div class="meta-chip">📱 Google Play Store · Apple App Store</div>
+    <div class="meta-chip">🗓️ <span class="es">Última actualización: noviembre 2026</span><span class="en">Last updated: November 2026</span></div>
+    <div class="meta-chip">📱 Google Play · App Store</div>
     <div class="meta-chip">✉️ hugo.andrada.dev@gmail.com</div>
   </div>
 </div>
 
 <div class="layout">
 
-  <nav class="toc">
-    <div class="toc-label es">En esta página</div>
-    <div class="toc-label en">On this page</div>
-    <a href="#privacy" class="doc-heading es">Política de Privacidad</a>
-    <a href="#privacy" class="doc-heading en">Privacy Policy</a>
-    <a href="#p1">01 · <span class="es">Introducción</span><span class="en">Introduction</span></a>
-    <a href="#p2">02 · <span class="es">Qué NO recopilamos</span><span class="en">What we don't collect</span></a>
-    <a href="#p3">03 · <span class="es">Publicidad (AdMob)</span><span class="en">Advertising (AdMob)</span></a>
-    <a href="#p4">04 · <span class="es">Almacenamiento local</span><span class="en">Local storage</span></a>
-    <a href="#p5">05 · <span class="es">Servidores externos</span><span class="en">External servers</span></a>
-    <a href="#p6">06 · <span class="es">Compras</span><span class="en">Purchases</span></a>
-    <a href="#p7">07 · <span class="es">Menores de edad</span><span class="en">Children</span></a>
-    <a href="#p8">08 · <span class="es">Tus derechos</span><span class="en">Your rights</span></a>
-    <a href="#p9">09 · <span class="es">Cambios</span><span class="en">Changes</span></a>
-    <a href="#terms" class="doc-heading es">Términos de Uso</a>
-    <a href="#terms" class="doc-heading en">Terms of Use</a>
-    <a href="#t1">01 · <span class="es">Licencia</span><span class="en">License</span></a>
-    <a href="#t2">02 · <span class="es">Propiedad intelectual</span><span class="en">Intellectual property</span></a>
-    <a href="#t3">03 · <span class="es">Aviso de entretenimiento</span><span class="en">Entertainment notice</span></a>
-    <a href="#t4">04 · <span class="es">Restricciones</span><span class="en">Restrictions</span></a>
-    <a href="#t5">05 · <span class="es">Suscripciones</span><span class="en">Subscriptions</span></a>
-    <a href="#t6">06 · <span class="es">Terminación</span><span class="en">Termination</span></a>
-    <a href="#t7">07 · <span class="es">Responsabilidad</span><span class="en">Liability</span></a>
-    <a href="#t8">08 · <span class="es">Ley aplicable</span><span class="en">Governing law</span></a>
-    <a href="#sources" class="doc-heading es">Fuentes</a>
-    <a href="#sources" class="doc-heading en">Sources</a>
+  <nav class="toc" aria-label="Índice / Contents">
+    <div class="toc-label"><span class="es">En esta página</span><span class="en">On this page</span></div>
+    <ol>
+      <li><a class="toc-doc" href="#privacidad"><span class="es">Política de Privacidad</span><span class="en">Privacy Policy</span></a></li>
+      <li><a href="#p1">01 · <span class="es">Introducción</span><span class="en">Introduction</span></a></li>
+      <li><a href="#p2">02 · <span class="es">Datos que tratamos</span><span class="en">Data we handle</span></a></li>
+      <li><a href="#p3">03 · <span class="es">Publicidad (AdMob)</span><span class="en">Advertising (AdMob)</span></a></li>
+      <li><a href="#p4">04 · <span class="es">Almacenamiento local</span><span class="en">Local storage</span></a></li>
+      <li><a href="#p5">05 · <span class="es">Compras</span><span class="en">Purchases</span></a></li>
+      <li><a href="#p6">06 · <span class="es">Servicios de terceros</span><span class="en">Third-party services</span></a></li>
+      <li><a href="#p7">07 · <span class="es">Menores</span><span class="en">Children</span></a></li>
+      <li><a href="#p8">08 · <span class="es">Tus opciones</span><span class="en">Your choices</span></a></li>
+      <li><a href="#p9">09 · <span class="es">Cambios</span><span class="en">Changes</span></a></li>
+    </ol>
+    <ol>
+      <li><a class="toc-doc" href="#terminos"><span class="es">Términos de Uso</span><span class="en">Terms of Use</span></a></li>
+      <li><a href="#t1">01 · <span class="es">Licencia</span><span class="en">License</span></a></li>
+      <li><a href="#t2">02 · <span class="es">Propiedad intelectual</span><span class="en">Intellectual property</span></a></li>
+      <li><a href="#t3">03 · <span class="es">Restricciones</span><span class="en">Restrictions</span></a></li>
+      <li><a href="#t4">04 · <span class="es">Compras y suscripciones</span><span class="en">Purchases and subscriptions</span></a></li>
+      <li><a href="#t5">05 · <span class="es">Terminación</span><span class="en">Termination</span></a></li>
+      <li><a href="#t6">06 · <span class="es">Responsabilidad</span><span class="en">Liability</span></a></li>
+      <li><a href="#t7">07 · <span class="es">Ley aplicable y contacto</span><span class="en">Governing law and contact</span></a></li>
+    </ol>
   </nav>
 
   <main>
 
-    <!-- ============ PRIVACY POLICY ============ -->
-    <div class="doc-title first" id="privacy"><span class="es">01 — Política de Privacidad</span><span class="en">01 — Privacy Policy</span></div>
+    <!-- ============ POLÍTICA DE PRIVACIDAD ============ -->
+    <h2 class="doc-title" id="privacidad"><span class="es">01 — Política de Privacidad</span><span class="en">01 — Privacy Policy</span></h2>
 
-    <div class="callout">
-      <strong class="es">Resumen: </strong><span class="es">por defecto, nuestras apps no recopilan datos personales. La excepción es la publicidad (AdMob), detallada explícitamente en la sección 03.</span>
-      <strong class="en">Summary: </strong><span class="en">by default, our apps do not collect personal data. The exception is advertising (AdMob), explicitly detailed in section 03.</span>
-    </div>
-
-    <div class="section open" id="p1">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">01</div>
-        <h3 class="es">Introducción</h3><h3 class="en">Introduction</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="p1" open>
+      <summary>
+        <span class="section-num">01</span>
+        <span class="section-title"><span class="es">Introducción</span><span class="en">Introduction</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Esta política aplica a las apps publicadas en Google Play por <strong>Creative Solutions Apps</strong> y en la App Store por <strong>Hugo Andrada</strong>. Cubre todas nuestras apps para Android e iOS.</p>
+        <p class="en">This policy applies to the apps published on Google Play by <strong>Creative Solutions Apps</strong> and on the App Store by <strong>Hugo Andrada</strong>. It covers all of our apps for Android and iOS.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Esta Política de Privacidad describe cómo el desarrollador gestiona la información de los usuarios de las aplicaciones móviles publicadas tanto en <strong>Google Play Store</strong> (bajo el nombre de desarrollador <strong>Creative Solutions Apps</strong>) como en la <strong>App Store de Apple</strong> (bajo el nombre de desarrollador <strong>Hugo Andrada</strong>).</p>
-        <p class="en">This Privacy Policy describes how the developer handles information from users of mobile applications published on both the <strong>Google Play Store</strong> (under the developer name <strong>Creative Solutions Apps</strong>) and the <strong>Apple App Store</strong> (under the developer name <strong>Hugo Andrada</strong>).</p>
-        <p class="es"><strong>Resumen:</strong> por defecto no recopilamos, almacenamos, procesamos ni compartimos ningún dato tuyo. Esto aplica por igual a todas nuestras apps en Android e iOS, salvo la excepción de publicidad descrita en la sección 03 para las apps que la incluyan.</p>
-        <p class="en"><strong>Summary:</strong> by default we do not collect, store, process, or share any of your data. This applies equally to all our apps on Android and iOS, except for the advertising exception described in section 03 for apps that include it.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="p2">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">02</div>
-        <h3 class="es">Información que NO recopilamos (por defecto)</h3><h3 class="en">Information we do NOT collect (by default)</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="p2">
+      <summary>
+        <span class="section-num">02</span>
+        <span class="section-title"><span class="es">Datos que tratamos</span><span class="en">Data we handle</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Nuestras apps <strong>no recopilan</strong> nombre, correo electrónico, teléfono, ubicación, contactos, fotos, micrófono ni historial de uso. Tampoco tenemos servidores propios que reciban información de tu dispositivo.</p>
+        <p class="en">Our apps <strong>do not collect</strong> your name, email address, phone number, location, contacts, photos, microphone access, or usage history. We also do not run our own servers that receive information from your device.</p>
+        <p class="es">El único dato involucrado es el <strong>identificador de publicidad</strong> de tu dispositivo: IDFA en iOS e ID de publicidad en Android. Lo usa Google AdMob, como se explica en la sección 03.</p>
+        <p class="en">The only data involved is your device's <strong>advertising identifier</strong>: IDFA on iOS and Advertising ID on Android. Google AdMob uses it, as explained in section 03.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Todas las aplicaciones están diseñadas con una filosofía de privacidad total. Con la excepción de publicidad detallada en la sección 03 (aplicable solo a las apps que muestran anuncios), no recopilamos ningún tipo de información, incluyendo:</p>
-        <p class="en">All applications are built on a total-privacy philosophy. With the advertising exception detailed in section 03 (applicable only to apps that display ads), we do not collect any type of information, including:</p>
+    </details>
+
+    <details class="section" id="p3">
+      <summary>
+        <span class="section-num">03</span>
+        <span class="section-title"><span class="es">Publicidad (AdMob)</span><span class="en">Advertising (AdMob)</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Algunas apps muestran anuncios de <strong>Google AdMob</strong>, indicado en la descripción de la app en la tienda. Cuando eso ocurre, AdMob puede tratar:</p>
+        <p class="en">Some apps show ads from <strong>Google AdMob</strong>, as noted in the app's store listing. When that happens, AdMob may process:</p>
         <ul>
-          <li class="es">Nombre, correo electrónico, número de teléfono u otra información de identidad personal</li>
-          <li class="en">Name, email address, phone number, or any other personal identity information</li>
-          <li class="es">Ubicación geográfica o datos GPS</li>
-          <li class="en">Geographic location or GPS data</li>
-          <li class="es">Historial de uso, sesiones o comportamiento dentro de la app</li>
-          <li class="en">Usage history, sessions, or in-app behavior</li>
-          <li class="es">Identificadores del dispositivo (Android Advertising ID, IDFA, IDFV, etc.)</li>
-          <li class="en">Device identifiers (Android Advertising ID, IDFA, IDFV, etc.)</li>
-          <li class="es">Datos de salud, financieros o cualquier categoría sensible</li>
-          <li class="en">Health, financial, or any other sensitive category of data</li>
-          <li class="es">Cookies, rastreadores o tecnologías de seguimiento</li>
-          <li class="en">Cookies, trackers, or any tracking technologies</li>
-          <li class="es">Direcciones IP o datos de red</li>
-          <li class="en">IP addresses or network data</li>
-          <li class="es">Contactos, fotos, micrófono u otros recursos del dispositivo</li>
-          <li class="en">Contacts, photos, microphone, or other device resources</li>
+          <li class="es">El identificador de publicidad de tu dispositivo.</li>
+          <li class="en">Your device's advertising identifier.</li>
+          <li class="es">Tu dirección IP y datos de interacción con los anuncios.</li>
+          <li class="en">Your IP address and ad interaction data.</li>
+          <li class="es">Datos técnicos de diagnóstico.</li>
+          <li class="en">Technical diagnostic data.</li>
         </ul>
-      </div></div>
-    </div>
-
-    <div class="section open" id="p3">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">03</div>
-        <h3 class="es">Publicidad y AdMob</h3><h3 class="en">Advertising and AdMob</h3>
-        <span class="badge-new es">Nuevo</span><span class="badge-new en">New</span>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Algunas de nuestras apps (indicado dentro de la app y su ficha en la tienda correspondiente) incluyen anuncios publicitarios servidos a través de <strong>Google AdMob</strong>. Cuando una app muestra anuncios:</p>
-        <p class="en">Some of our apps (indicated within the app itself and its store listing) include advertising served through <strong>Google AdMob</strong>. When an app displays ads:</p>
-        <ul>
-          <li class="es">Google AdMob puede recolectar identificadores de publicidad (IDFA en iOS, Advertising ID en Android), dirección IP, datos de interacción con los anuncios y datos de diagnóstico técnico.</li>
-          <li class="en">Google AdMob may collect advertising identifiers (IDFA on iOS, Advertising ID on Android), IP address, ad interaction data, and technical diagnostics.</li>
-          <li class="es">En iOS, la app solicita tu permiso de seguimiento (App Tracking Transparency) antes de usar el identificador de publicidad. Podés aceptar o rechazar este permiso libremente desde el sistema.</li>
-          <li class="en">On iOS, the app requests tracking permission (App Tracking Transparency) before using the advertising identifier. You can freely accept or decline this permission from the system prompt.</li>
-          <li class="es">Estos datos son recolectados y procesados directamente por Google, no por el desarrollador, con el fin de mostrar anuncios personalizados o no personalizados según tu consentimiento.</li>
-          <li class="en">This data is collected and processed directly by Google, not by the developer, in order to show personalized or non-personalized ads based on your consent.</li>
-          <li class="es">Algunas apps pueden ofrecer la opción de eliminar los anuncios mediante una compra o suscripción premium (ver sección 06).</li>
-          <li class="en">Some apps may offer the option to remove ads through a premium purchase or subscription (see section 06).</li>
-        </ul>
-        <div class="ads-note">
-          <div class="ads-note-title">⚠ <span class="es">Nota</span><span class="en">Note</span></div>
-          <span class="es">El desarrollador no accede ni almacena estos datos en ningún momento. Toda la información publicitaria es gestionada por Google bajo su propia política de privacidad y de publicidad.</span>
-          <span class="en">The developer never accesses or stores this data. All advertising information is handled by Google under its own privacy and advertising policy.</span>
+        <p class="es">En iOS, la app te pide permiso de seguimiento (App Tracking Transparency) antes de usar el IDFA. Puedes aceptar o rechazarlo en ese momento.</p>
+        <p class="en">On iOS, the app asks for tracking permission (App Tracking Transparency) before using the IDFA. You can accept or decline at that prompt.</p>
+        <p class="es">Google trata estos datos directamente para mostrar anuncios personalizados o no personalizados, según tu elección. Nosotros no accedemos a ellos ni los almacenamos.</p>
+        <p class="en">Google processes this data directly to show personalized or non-personalized ads, depending on your choice. We do not access or store it.</p>
+        <div class="note">
+          <span class="es">Política de Google para anuncios: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></span>
+          <span class="en">Google's advertising policy: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></span>
         </div>
-      </div></div>
-    </div>
-
-    <div class="section" id="p4">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">04</div>
-        <h3 class="es">Almacenamiento local únicamente</h3><h3 class="en">Local storage only</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Todos los datos que introduzcas en cualquiera de nuestras aplicaciones se almacenan <strong>exclusivamente en tu propio dispositivo</strong>. En Android se usa almacenamiento nativo (SharedPreferences / Room DB); en iOS, almacenamiento nativo (UserDefaults / SwiftData).</p>
-        <p class="en">All data you enter into any of our applications is stored <strong>exclusively on your own device</strong>. On Android, native storage is used (SharedPreferences / Room DB); on iOS, native storage (UserDefaults / SwiftData).</p>
+    </details>
+
+    <details class="section" id="p4">
+      <summary>
+        <span class="section-num">04</span>
+        <span class="section-title"><span class="es">Almacenamiento local</span><span class="en">Local storage</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Las preferencias y los datos que uses dentro de la app se guardan <strong>solo en tu dispositivo</strong>. Nadie más, incluido el desarrollador, puede acceder a ellos. Si desinstalas la app, esos datos se eliminan.</p>
+        <p class="en">Preferences and data you use inside the app are stored <strong>only on your device</strong>. No one else, including the developer, can access them. If you uninstall the app, that data is deleted.</p>
+        <p class="es">Si tu sistema hace copias de seguridad (Google Drive en Android o iCloud en iOS), esas copias se rigen por las condiciones de Google o Apple.</p>
+        <p class="en">If your system backs up your device (Google Drive on Android or iCloud on iOS), those backups follow Google's or Apple's terms.</p>
+      </div>
+    </details>
+
+    <details class="section" id="p5">
+      <summary>
+        <span class="section-num">05</span>
+        <span class="section-title"><span class="es">Compras</span><span class="en">Purchases</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Si una app ofrece compras o suscripciones, las procesa la tienda: Google Play en Android y App Store en iOS. <strong>No recibimos ni almacenamos datos de pago.</strong></p>
+        <p class="en">If an app offers purchases or subscriptions, the store processes them: Google Play on Android and the App Store on iOS. <strong>We do not receive or store payment data.</strong></p>
+      </div>
+    </details>
+
+    <details class="section" id="p6">
+      <summary>
+        <span class="section-num">06</span>
+        <span class="section-title"><span class="es">Servicios de terceros</span><span class="en">Third-party services</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Usamos estos servicios, cada uno con su propia política de privacidad:</p>
+        <p class="en">We use these services, each with its own privacy policy:</p>
         <ul>
-          <li class="es">Nadie más, incluido el desarrollador, puede acceder a tus datos</li>
-          <li class="en">No one else, including the developer, can access your data</li>
-          <li class="es">Si desinstalás la app, todos los datos se eliminan permanentemente</li>
-          <li class="en">If you uninstall the app, all data is permanently deleted</li>
-          <li class="es">Las copias de seguridad mediante Google Drive (Android) o iCloud (iOS) quedan bajo las condiciones de Google o Apple respectivamente</li>
-          <li class="en">Backups via Google Drive (Android) or iCloud (iOS) are governed by Google's or Apple's own terms respectively</li>
+          <li><span class="es">Google AdMob (publicidad).</span><span class="en">Google AdMob (advertising).</span></li>
+          <li><span class="es">Google Play y App Store (descargas y compras).</span><span class="en">Google Play and the App Store (downloads and purchases).</span></li>
         </ul>
-      </div></div>
-    </div>
-
-    <div class="section" id="p5">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">05</div>
-        <h3 class="es">Sin conexión a servidores externos propios</h3><h3 class="en">No connection to our own external servers</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Ninguna de nuestras aplicaciones se comunica con servidores externos propios. No existe infraestructura backend que reciba tu información. Todas las apps funcionan de manera completamente autónoma en tu dispositivo.</p>
-        <p class="en">None of our applications communicate with any external servers owned by the developer. There is no backend infrastructure receiving your information. All apps operate entirely and autonomously on your device.</p>
-        <p class="es"><strong>Nota sobre servicios de terceros:</strong> si alguna app incorpora herramientas como Google Play Billing, RevenueCat, el sistema de compras de Apple o Google AdMob, dichos servicios gestionan los datos según sus propias políticas. El desarrollador no accede a esa información en ningún caso.</p>
-        <p class="en"><strong>Note on third-party services:</strong> if any app includes tools such as Google Play Billing, RevenueCat, Apple's In-App Purchase, or Google AdMob, those services handle data according to their own privacy policies. The developer does not access that information in any way.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="p6">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">06</div>
-        <h3 class="es">Compras y suscripciones</h3><h3 class="en">Purchases and subscriptions</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="p7">
+      <summary>
+        <span class="section-num">07</span>
+        <span class="section-title"><span class="es">Menores</span><span class="en">Children</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Nuestras apps no están dirigidas a menores de 13 años (COPPA) ni de 16 años (GDPR), y no recopilamos información de niños intencionalmente. Si eres madre, padre o tutor y crees que una app ha tratado datos de tu hijo, escríbenos y lo revisamos.</p>
+        <p class="en">Our apps are not directed to children under 13 (COPPA) or under 16 (GDPR), and we do not knowingly collect information from children. If you are a parent or guardian and believe an app has processed your child's data, contact us and we will review it.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Si alguna aplicación ofrece compras integradas o suscripciones, estas son procesadas directamente por la tienda correspondiente. En Android, por <strong>Google</strong> (Google Play Billing); en iOS, por <strong>Apple</strong> (App Store). El desarrollador no recibe ni almacena datos de pago en ningún caso.</p>
-        <p class="en">If any application offers in-app purchases or subscriptions, these are processed directly by the respective platform store. On Android, by <strong>Google</strong> (Google Play Billing); on iOS, by <strong>Apple</strong> (App Store). The developer does not receive or store any payment data.</p>
-        <p class="es">Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br>Política de privacidad de Apple: <a href="https://www.apple.com/legal/privacy/es/" target="_blank">apple.com/legal/privacy</a></p>
-        <p class="en">Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a><br>Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="p7">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">07</div>
-        <h3 class="es">Menores de edad</h3><h3 class="en">Children</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Dado que no recopilamos datos personales por defecto, no existe riesgo de tratamiento de información de menores. Nuestras aplicaciones no recopilan información de personas de ninguna edad, incluidos menores de 13 años (COPPA) o de 16 años (GDPR). En las apps con publicidad, no se sirven anuncios personalizados a usuarios identificados como menores.</p>
-        <p class="en">Since we do not collect personal data by default, there is no risk of processing information from minors. Our applications do not collect information from people of any age, including children under 13 (COPPA) or under 16 (GDPR). In apps with advertising, personalized ads are not served to users identified as children.</p>
-      </div></div>
-    </div>
-
-    <div class="section" id="p8">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">08</div>
-        <h3 class="es">Tus derechos</h3><h3 class="en">Your rights</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Como no recopilamos ni almacenamos datos personales por defecto, el control total de tu información es tuyo desde el primer momento.</p>
-        <p class="en">Since we do not collect or store personal data by default, you have full control of your information from the very first moment.</p>
+    <details class="section" id="p8">
+      <summary>
+        <span class="section-num">08</span>
+        <span class="section-title"><span class="es">Tus opciones</span><span class="en">Your choices</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
         <ul>
-          <li class="es">Podés eliminar todos tus datos desinstalando la aplicación</li>
-          <li class="en">You can delete all your data by uninstalling the application</li>
-          <li class="es">Podés revocar el permiso de seguimiento publicitario (ATT) en cualquier momento desde Ajustes de tu dispositivo</li>
-          <li class="en">You can revoke advertising tracking permission (ATT) at any time from your device Settings</li>
-          <li class="es">No necesitás solicitarnos la eliminación de datos porque no tenemos ninguno</li>
-          <li class="en">You do not need to request data deletion from us because we hold none</li>
-          <li class="es">No recibirás comunicaciones comerciales porque no tenemos tu correo ni teléfono</li>
-          <li class="en">You will not receive marketing communications because we do not have your email or phone number</li>
+          <li><span class="es">Puedes rechazar el permiso de seguimiento en iOS, o limitar la personalización de anuncios desde los ajustes de tu dispositivo.</span><span class="en">You can decline tracking permission on iOS, or limit ad personalization in your device settings.</span></li>
+          <li><span class="es">Puedes restablecer o eliminar el identificador de publicidad desde los ajustes de tu dispositivo.</span><span class="en">You can reset or delete your advertising identifier in your device settings.</span></li>
+          <li><span class="es">Desinstalar una app elimina sus datos locales.</span><span class="en">Uninstalling an app deletes its local data.</span></li>
         </ul>
-      </div></div>
-    </div>
-
-    <div class="section" id="p9">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">09</div>
-        <h3 class="es">Cambios en esta política</h3><h3 class="en">Changes to this policy</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="es">No tenemos tus datos personales, así que no necesitas pedirnos su eliminación. Para los datos que trata Google, consulta su política.</p>
+        <p class="en">We do not hold your personal data, so you do not need to ask us to delete it. For data that Google processes, please see its policy.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Si en el futuro se realizan cambios significativos en esta política, se notificará mediante una actualización de la aplicación en Google Play Store y App Store, donde los cambios serán descritos en las notas de la versión.</p>
-        <p class="en">If significant changes are made to this privacy policy in the future, users will be notified through an application update on both the Google Play Store and the App Store, where changes will be described in the version release notes.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <!-- ============ TERMS ============ -->
-    <div class="doc-title" id="terms"><span class="es">02 — Términos de Uso (EULA)</span><span class="en">02 — Terms of Use (EULA)</span></div>
-
-    <div class="section" id="t1">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">01</div>
-        <h3 class="es">Licencia de uso</h3><h3 class="en">License of use</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="p9">
+      <summary>
+        <span class="section-num">09</span>
+        <span class="section-title"><span class="es">Cambios</span><span class="en">Changes</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Si cambiamos esta política de forma importante, lo indicaremos en la ficha de la app en Google Play y en la App Store, y en las notas de la versión.</p>
+        <p class="en">If we make significant changes to this policy, we will say so on the app's listing on Google Play and the App Store, and in the release notes.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es"><strong>Creative Solutions Apps</strong> (para apps Android) y <strong>Hugo Andrada</strong> (para apps iOS) te otorgan una licencia personal, no exclusiva, intransferible y limitada para descargar y usar la aplicación correspondiente en cualquier dispositivo compatible que poseas o controles, sujeta a los términos de este acuerdo y las condiciones de servicio de la tienda correspondiente.</p>
-        <p class="en"><strong>Creative Solutions Apps</strong> (for Android apps) and <strong>Hugo Andrada</strong> (for iOS apps) grant you a personal, non-exclusive, non-transferable, limited license to download and use the respective application on any compatible device you own or control, subject to the terms of this agreement and the applicable store's Terms of Service.</p>
-        <p class="es">No podés alquilar, arrendar, prestar, vender, redistribuir ni sublicenciar ninguna aplicación.</p>
-        <p class="en">You may not rent, lease, lend, sell, redistribute, or sublicense any application.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="t2">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">02</div>
-        <h3 class="es">Propiedad intelectual</h3><h3 class="en">Intellectual property</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Todas las aplicaciones y su contenido —incluyendo diseño, textos, gráficos, contenido digital y código— son propiedad exclusiva de <strong>Creative Solutions Apps / Hugo Andrada</strong> y están protegidos por las leyes de derechos de autor aplicables.</p>
-        <p class="en">All applications and their content — including design, text, graphics, digital content, and code — are the exclusive property of <strong>Creative Solutions Apps / Hugo Andrada</strong> and are protected by applicable copyright and intellectual property laws.</p>
-        <p class="es">No podés copiar, modificar, distribuir, vender ni crear obras derivadas de ninguna parte de ninguna aplicación sin permiso escrito explícito.</p>
-        <p class="en">You may not copy, modify, distribute, sell, or create derivative works from any part of any application without explicit written permission.</p>
-      </div></div>
-    </div>
+    <!-- ============ TÉRMINOS DE USO ============ -->
+    <h2 class="doc-title" id="terminos"><span class="es">02 — Términos de Uso</span><span class="en">02 — Terms of Use</span></h2>
 
-    <div class="section" id="t3">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">03</div>
-        <h3 class="es">Aviso de entretenimiento</h3><h3 class="en">Entertainment notice</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="t1">
+      <summary>
+        <span class="section-num">01</span>
+        <span class="section-title"><span class="es">Licencia de uso</span><span class="en">License of use</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es"><strong>Creative Solutions Apps</strong> (apps Android) y <strong>Hugo Andrada</strong> (apps iOS) te dan una licencia personal, no exclusiva, intransferible y limitada para usar la app en tus dispositivos, sujeta a estos términos y a las condiciones de la tienda donde la descargaste.</p>
+        <p class="en"><strong>Creative Solutions Apps</strong> (Android apps) and <strong>Hugo Andrada</strong> (iOS apps) give you a personal, non-exclusive, non-transferable, limited license to use the app on devices you own or control, subject to these terms and the terms of the store where you downloaded it.</p>
+        <p class="es">No puedes alquilar, prestar, vender, redistribuir ni sublicenciar nuestras apps.</p>
+        <p class="en">You may not rent, lend, sell, redistribute, or sublicense our apps.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es"><strong>Aviso importante:</strong> Todas las aplicaciones —incluyendo contenido numerológico, horóscopos, afirmaciones y cualquier otro contenido espiritual o esotérico— se proporcionan estrictamente con fines de <strong>entretenimiento y reflexión personal únicamente</strong>.</p>
-        <p class="en"><strong>Important notice:</strong> All applications — including numerological content, horoscopes, affirmations, and any other spiritual or esoteric content — are provided strictly for <strong>entertainment and personal reflection purposes only</strong>.</p>
-        <p class="es">El contenido no constituye ni debe interpretarse como:</p>
-        <p class="en">The content does not constitute and should not be interpreted as:</p>
+    </details>
+
+    <details class="section" id="t2">
+      <summary>
+        <span class="section-num">02</span>
+        <span class="section-title"><span class="es">Propiedad intelectual</span><span class="en">Intellectual property</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Las apps y su contenido (diseño, textos, gráficos y código) son propiedad de <strong>Creative Solutions Apps / Hugo Andrada</strong> y están protegidos por las leyes de propiedad intelectual aplicables.</p>
+        <p class="en">The apps and their content (design, text, graphics, and code) belong to <strong>Creative Solutions Apps / Hugo Andrada</strong> and are protected by applicable intellectual property laws.</p>
+        <p class="es">No puedes copiar, modificar, distribuir ni crear obras derivadas de ninguna parte de nuestras apps sin permiso escrito.</p>
+        <p class="en">You may not copy, modify, distribute, or create derivative works from any part of our apps without written permission.</p>
+      </div>
+    </details>
+
+    <details class="section" id="t3">
+      <summary>
+        <span class="section-num">03</span>
+        <span class="section-title"><span class="es">Restricciones</span><span class="en">Restrictions</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">No puedes:</p>
+        <p class="en">You may not:</p>
         <ul>
-          <li class="es">Asesoramiento psicológico o psiquiátrico profesional</li>
-          <li class="en">Professional psychological or psychiatric advice</li>
-          <li class="es">Consejo médico o de salud de ningún tipo</li>
-          <li class="en">Medical or health advice of any kind</li>
-          <li class="es">Asesoramiento financiero, legal o profesional</li>
-          <li class="en">Financial, legal, or professional advice</li>
-          <li class="es">Un sustituto de la consulta con profesionales calificados</li>
-          <li class="en">A substitute for consultation with qualified professionals</li>
+          <li class="es">Aplicar ingeniería inversa, descompilar ni desensamblar nuestras apps.</li>
+          <li class="en">Reverse engineer, decompile, or disassemble our apps.</li>
+          <li class="es">Usarlas para fines ilícitos ni intentar acceder sin autorización a sus partes internas.</li>
+          <li class="en">Use them for unlawful purposes or try to gain unauthorized access to any part of them.</li>
+          <li class="es">Eliminar avisos de copyright, marcas u otros avisos de propiedad.</li>
+          <li class="en">Remove copyright, trademark, or other proprietary notices.</li>
+          <li class="es">Usar herramientas automatizadas para extraer contenido de nuestras apps.</li>
+          <li class="en">Use automated tools to extract content from our apps.</li>
         </ul>
-        <p class="es">El desarrollador no hace ninguna afirmación sobre la exactitud o efectividad de ningún contenido espiritual, esotérico o numerológico. Si estás atravesando dificultades de salud mental, consultá a un profesional calificado.</p>
-        <p class="en">The developer makes no claims regarding the accuracy or effectiveness of any spiritual, esoteric, or numerological content. If you are experiencing mental health challenges, please consult a qualified professional.</p>
-      </div></div>
-    </div>
-
-    <div class="section" id="t4">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">04</div>
-        <h3 class="es">Restricciones</h3><h3 class="en">Restrictions</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Aceptás no:</p>
-        <p class="en">You agree not to:</p>
-        <ul>
-          <li class="es">Realizar ingeniería inversa, descompilar o desensamblar ninguna aplicación</li>
-          <li class="en">Reverse engineer, decompile, or disassemble any application</li>
-          <li class="es">Usar ninguna aplicación para ningún fin ilícito</li>
-          <li class="en">Use any application for any unlawful purpose</li>
-          <li class="es">Intentar acceder sin autorización a ninguna parte de ninguna aplicación</li>
-          <li class="en">Attempt to gain unauthorized access to any part of any application</li>
-          <li class="es">Eliminar o alterar avisos de copyright, marcas registradas u otros avisos de propiedad</li>
-          <li class="en">Remove or alter any copyright, trademark, or other proprietary notices</li>
-          <li class="es">Usar herramientas automatizadas para extraer contenido de ninguna aplicación</li>
-          <li class="en">Use automated tools to scrape or extract content from any application</li>
-        </ul>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="t5">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">05</div>
-        <h3 class="es">Suscripciones y compras</h3><h3 class="en">Subscriptions and purchases</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="t4">
+      <summary>
+        <span class="section-num">04</span>
+        <span class="section-title"><span class="es">Compras y suscripciones</span><span class="en">Purchases and subscriptions</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Algunas funciones pueden requerir una compra única o una suscripción. La facturación, los reembolsos y la gestión de suscripciones corresponden a Google Play en Android y a App Store en iOS.</p>
+        <p class="en">Some features may require a one-time purchase or a subscription. Billing, refunds, and subscription management are handled by Google Play on Android and the App Store on iOS.</p>
+        <p class="es">Las suscripciones se renuevan automáticamente salvo que las canceles al menos 24 horas antes del fin del periodo actual.</p>
+        <p class="en">Subscriptions renew automatically unless you cancel at least 24 hours before the end of the current period.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Algunas funciones pueden requerir una suscripción de pago o una compra única, procesada exclusivamente a través de la tienda correspondiente. En Android, la facturación, reembolsos y gestión de suscripciones son manejados por <strong>Google</strong> (Google Play); en iOS, por <strong>Apple</strong> (App Store).</p>
-        <p class="en">Some features may require a paid subscription or one-time purchase, processed exclusively through the respective platform store. On Android, billing, refunds, and subscription management are handled by <strong>Google</strong> (Google Play); on iOS, by <strong>Apple</strong> (App Store).</p>
-        <p class="es">Las suscripciones se renuevan automáticamente a menos que se cancelen al menos 24 horas antes del final del período actual.</p>
-        <p class="en">Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="t6">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">06</div>
-        <h3 class="es">Terminación</h3><h3 class="en">Termination</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="t5">
+      <summary>
+        <span class="section-num">05</span>
+        <span class="section-title"><span class="es">Terminación</span><span class="en">Termination</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Esta licencia sigue vigente hasta que se termine. Se extingue automáticamente si incumples estos términos. Al terminar, debes dejar de usar la app y eliminarla de tus dispositivos.</p>
+        <p class="en">This license remains in effect until terminated. It ends automatically if you breach these terms. Upon termination, you must stop using the app and delete it from your devices.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Esta licencia es efectiva hasta su terminación. Tus derechos bajo esta licencia se terminarán automáticamente si no cumplís con alguno de sus términos. Al terminar, debés cesar todo uso de la aplicación y eliminar todas las copias de tu dispositivo.</p>
-        <p class="en">This license is effective until terminated. Your rights under this license will terminate automatically if you fail to comply with any of its terms. Upon termination, you must cease all use of the application and delete all copies from your device.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="t7">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">07</div>
-        <h3 class="es">Limitación de responsabilidad</h3><h3 class="en">Limitation of liability</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="t6">
+      <summary>
+        <span class="section-num">06</span>
+        <span class="section-title"><span class="es">Responsabilidad</span><span class="en">Liability</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">En la medida que permita la ley aplicable, <strong>Creative Solutions Apps / Hugo Andrada</strong> no responde por daños indirectos, incidentales, especiales o consecuentes derivados del uso o de la imposibilidad de usar nuestras apps.</p>
+        <p class="en">To the extent permitted by applicable law, <strong>Creative Solutions Apps / Hugo Andrada</strong> is not liable for indirect, incidental, special, or consequential damages arising from the use of, or inability to use, our apps.</p>
+        <p class="es">Las apps se ofrecen "tal cual", sin garantías de ningún tipo, expresas o implícitas.</p>
+        <p class="en">The apps are provided "as is", without warranties of any kind, express or implied.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">En la máxima medida permitida por la ley aplicable, <strong>Creative Solutions Apps / Hugo Andrada</strong> no será responsable de ningún daño indirecto, incidental, especial, consecuente o punitivo resultante del uso o la imposibilidad de usar ninguna aplicación.</p>
-        <p class="en">To the maximum extent permitted by applicable law, <strong>Creative Solutions Apps / Hugo Andrada</strong> shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use any application.</p>
-        <p class="es">Todas las aplicaciones se proporcionan "tal cual" sin garantías de ningún tipo, expresas o implícitas.</p>
-        <p class="en">All applications are provided "as is" without warranties of any kind, express or implied.</p>
-      </div></div>
-    </div>
+    </details>
 
-    <div class="section" id="t8">
-      <div class="section-head" onclick="toggle(this)">
-        <div class="section-num">08</div>
-        <h3 class="es">Ley aplicable y contacto</h3><h3 class="en">Governing law and contact</h3>
-        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <details class="section" id="t7">
+      <summary>
+        <span class="section-num">07</span>
+        <span class="section-title"><span class="es">Ley aplicable y contacto</span><span class="en">Governing law and contact</span></span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="section-body">
+        <p class="es">Estos términos se rigen por las leyes de Argentina. Cualquier disputa se resolverá ante los tribunales competentes de Argentina.</p>
+        <p class="en">These terms are governed by the laws of Argentina. Any dispute will be resolved by the competent courts of Argentina.</p>
+        <p class="es">¿Preguntas? Escribe a <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a>.</p>
+        <p class="en">Questions? Write to <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a>.</p>
       </div>
-      <div class="section-body"><div class="section-body-inner">
-        <p class="es">Estos términos se rigen por las leyes de Argentina. Cualquier disputa se resolverá en los tribunales de jurisdicción competente en Argentina.</p>
-        <p class="en">These terms are governed by the laws of Argentina. Any disputes shall be resolved in the courts of competent jurisdiction in Argentina.</p>
-        <p class="es">¿Preguntas sobre estos términos? <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></p>
-        <p class="en">Questions about these terms? <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></p>
-      </div></div>
-    </div>
+    </details>
 
-    <!-- ============ SOURCES ============ -->
-    <div class="doc-title" id="sources"><span class="es">03 — Fuentes de datos externas</span><span class="en">03 — External data sources</span></div>
-    <p style="font-size:14.5px;color:var(--ink-secondary);margin-top:-8px;">
-      <span class="es">Servicios de terceros referenciados en este documento y sus propias políticas de privacidad.</span>
-      <span class="en">Third-party services referenced in this document and their own privacy policies.</span>
+    <!-- ============ FUENTES ============ -->
+    <h2 class="doc-title" id="fuentes"><span class="es">03 — Fuentes externas</span><span class="en">03 — External sources</span></h2>
+    <p style="font-size:14.5px;color:var(--ink-2);margin:-4px 0 12px;">
+      <span class="es">Servicios de terceros mencionados en este documento, con sus políticas oficiales.</span>
+      <span class="en">Third-party services mentioned in this document, with their official policies.</span>
     </p>
 
     <div class="link-grid">
-      <a class="link-card" href="https://policies.google.com/privacy" target="_blank">Google Play · <span class="es">Privacidad</span><span class="en">Privacy</span> <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://play.google.com/about/play-terms/" target="_blank">Google Play · <span class="es">Términos</span><span class="en">Terms</span> <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://policies.google.com/technologies/ads" target="_blank">Google AdMob · <span class="es">Publicidad</span><span class="en">Advertising</span> <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://www.apple.com/legal/privacy/" target="_blank">Apple · <span class="es">Privacidad</span><span class="en">Privacy</span> <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank">Apple · App Store Terms <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat · <span class="es">Privacidad</span><span class="en">Privacy</span> <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank">COPPA (US) <span class="arrow">↗</span></a>
-      <a class="link-card" href="https://gdpr.eu/privacy-notice/" target="_blank">GDPR (Europe) <span class="arrow">↗</span></a>
+      <a class="link-card" href="https://policies.google.com/privacy" target="_blank" rel="noopener"><span>Google · <span class="es">Privacidad</span><span class="en">Privacy</span></span><span aria-hidden="true">↗</span></a>
+      <a class="link-card" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener"><span>Google AdMob · <span class="es">Publicidad</span><span class="en">Advertising</span></span><span aria-hidden="true">↗</span></a>
+      <a class="link-card" href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener"><span>Google Play · <span class="es">Términos</span><span class="en">Terms</span></span><span aria-hidden="true">↗</span></a>
+      <a class="link-card" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener"><span>Apple · <span class="es">Privacidad</span><span class="en">Privacy</span></span><span aria-hidden="true">↗</span></a>
+      <a class="link-card" href="https://www.apple.com/legal/internet-services/itunes/us/terms.html" target="_blank" rel="noopener"><span>Apple · App Store Terms</span><span aria-hidden="true">↗</span></a>
+      <a class="link-card" href="https://gdpr.eu/privacy-notice/" target="_blank" rel="noopener"><span>GDPR (Europe)</span><span aria-hidden="true">↗</span></a>
     </div>
 
   </main>
 </div>
 
 <footer>
-  <div>© 2026 · Creative Solutions Apps / Hugo Andrada · Android &amp; iOS</div>
+  <div>© 2026 · Creative Solutions Apps / Hugo Andrada</div>
   <div>✉️ <a href="mailto:hugo.andrada.dev@gmail.com">hugo.andrada.dev@gmail.com</a></div>
 </footer>
 
 <script>
   function setLang(lang){
     document.documentElement.setAttribute('data-lang', lang);
-    document.getElementById('btn-es').classList.toggle('active', lang==='es');
-    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.documentElement.setAttribute('lang', lang);
+    document.getElementById('btn-es').setAttribute('aria-pressed', lang === 'es');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
   }
-  function toggle(headEl){
-    headEl.parentElement.classList.toggle('open');
-  }
-  setLang('es');
+  // Idioma inicial: el del navegador si es inglés; si no, español.
+  setLang((navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es');
 </script>
 
 </body>
